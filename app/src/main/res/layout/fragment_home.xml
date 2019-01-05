@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:elevation="0dp"
+        app:elevation="0dp"
+        android:id="@+id/appbar"
+        android:background="@color/theme_color_primary"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <com.bilibili.magicasakura.widgets.TintFrameLayout
+            android:layout_gravity="center_vertical"
+            android:id="@+id/toobar"
+            app:layout_scrollFlags="enterAlways|enterAlwaysCollapsed"
+            android:background="@color/theme_color_primary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_marginLeft="@dimen/dp_10"
+                android:id="@+id/iv_title_menu"
+                android:layout_width="23dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:src="@mipmap/titlebar_menu" />
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_title_one"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/home_android_selector" />
+
+
+                    <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:id="@+id/iv_title_two"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/home_hot_selector" />
+
+                    <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:id="@+id/iv_title_three"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/home_cate_selector" />
+                </LinearLayout>
+
+            </HorizontalScrollView>
+            <ImageView
+                android:id="@+id/iv_search"
+                android:padding="@dimen/dp_10"
+                android:layout_gravity="right|center_vertical"
+                android:src="@mipmap/icon_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </com.bilibili.magicasakura.widgets.TintFrameLayout>
+    </android.support.design.widget.AppBarLayout>
+
+
+
+    <android.support.v4.view.ViewPager
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/vp_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.github.clans.fab.FloatingActionMenu
+        app:layout_behavior="com.hankkin.reading.view.ScrollAwareFABBehavior"
+        android:id="@+id/fab_menu_add"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        fab:menu_labels_ellipsize="end"
+        fab:menu_labels_singleLine="true"
+        fab:menu_colorNormal="@color/theme_color_primary"
+        fab:menu_colorPressed="@color/theme_color_primary"
+        fab:menu_colorRipple="@color/theme_color_primary"
+        fab:menu_fab_label="">
+
+        <com.github.clans.fab.FloatingActionButton
+            fab:menu_colorNormal="@color/theme_color_primary"
+            fab:menu_colorPressed="@color/theme_color_primary"
+            fab:menu_colorRipple="@color/theme_color_primary"
+            android:id="@+id/fab_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/fab_up"
+            style="@style/menu_labels_style"
+            fab:fab_size="mini"
+            fab:fab_label="@string/home_fab_up" />
+
+        <com.github.clans.fab.FloatingActionButton
+            fab:menu_colorNormal="@color/theme_color_primary"
+            fab:menu_colorPressed="@color/theme_color_primary"
+            fab:menu_colorRipple="@color/theme_color_primary"
+            android:id="@+id/fab_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/fab_refresh"
+            style="@style/menu_labels_style"
+            fab:fab_size="mini"
+            fab:fab_label="@string/home_fab_refresh" />
+
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/fab_write"
+            fab:fab_size="mini"
+            style="@style/menu_labels_style"
+            fab:menu_colorNormal="@color/theme_color_primary"
+            fab:menu_colorPressed="@color/theme_color_primary"
+            fab:menu_colorRipple="@color/theme_color_primary_dark"
+            fab:fab_label="@string/home_fab_write" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+</android.support.design.widget.CoordinatorLayout>

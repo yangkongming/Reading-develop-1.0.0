@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:id="@+id/tv_translate_para_key"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:text=""
+    android:textColor="@color/normal_txt"
+    android:paddingTop="@dimen/dp_10"
+    android:textSize="@dimen/sp_14"
+    android:textStyle="italic"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/normal_bg"
+    android:orientation="vertical">
+
+
+    <com.bilibili.magicasakura.widgets.TintRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/theme_color_primary"
+        android:paddingBottom="@dimen/dp_20"
+        android:paddingTop="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_10"
+        android:paddingLeft="@dimen/dp_10">
+
+        <TextView
+            android:id="@+id/tv_tools_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hi,小猿猿"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="italic|bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_tools_title"
+            android:text="Welcome to Reading"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_12" />
+
+        <ImageView
+            android:id="@+id/iv_translate_weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_4"
+            android:layout_toLeftOf="@+id/tv_translate_weather" />
+
+        <TextView
+            android:id="@+id/tv_translate_weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14" />
+
+    </com.bilibili.magicasakura.widgets.TintRelativeLayout>
+
+
+
+    <include layout="@layout/layout_tools"/>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_word_every"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_10"
+                app:cardCornerRadius="@dimen/dp_6">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp_10">
+
+
+                    <include
+                        android:id="@+id/layout_word_every"
+                        layout="@layout/layout_word_every"/>
+                    <include
+                        android:visibility="gone"
+                        android:id="@+id/layout_word_no_data"
+                        layout="@layout/layout_word_no_data"/>
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_10"
+                android:background="?attr/selectableItemBackground"
+                app:cardCornerRadius="@dimen/dp_6">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/xrv_tools_lisy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbarAlwaysDrawVerticalTrack="true"
+                    android:scrollbarFadeDuration="1"
+                    android:scrollbarSize="4dp"
+                    android:scrollbars="vertical" />
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:layout_marginTop="@dimen/dp_20"
+                android:textSize="@dimen/sp_14"
+                android:padding="@dimen/dp_10"
+                android:layout_gravity="bottom"
+                android:id="@+id/tv_tools_version"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</LinearLayout>

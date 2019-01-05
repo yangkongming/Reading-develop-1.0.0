@@ -1,0 +1,100 @@
+<resources>
+
+    <style name="TabLayoutStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="whiteTxt">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+    </style>
+
+    <style name="whiteTxtBig">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
+
+    <style name="blackTxt">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+    </style>
+
+    <style name="normalTxt">
+        <item name="android:textColor">@color/normal_txt</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+    </style>
+    <style name="greyTxt">
+        <item name="android:textColor">@color/grey_text</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+    </style>
+
+    <style name="normalTxtBig">
+        <item name="android:textColor">@color/normal_txt</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
+    <style name="themeTxt">
+        <item name="android:textColor">@color/theme_color_primary</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+    </style>
+
+    <style name="menu_labels_style">
+        <item name="fab_colorNormal">@color/theme_color_primary</item>
+        <item name="fab_colorPressed">@color/theme_color_primary_dark</item>
+        <item name="fab_colorRipple">@color/theme_color_primary</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="BottomSheet.StyleDialog" parent="BottomSheet.Dialog">
+        <item name="android:backgroundDimAmount">0.5</item>
+        <item name="android:windowAnimationStyle">@style/BottomSheet.Animation</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/normal_txt</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColorHint">#42ffffff</item>
+        <item name="bs_dialogBackground">@color/white</item>
+        <item name="bs_dividerColor">@color/grey</item>
+        <item name="bs_numColumns">5</item>
+        <item name="bs_listStyle">@style/BottomSheet.List</item>
+    </style>
+
+    <!--溢出[弹出]菜单样式 parent相当于继承【可以不要parent】-->
+    <style name="OverflowMenuStyle" parent="@style/Widget.AppCompat.PopupMenu.Overflow">
+        <!-- 是否覆盖锚点，默认为true，即盖住Toolbar -->
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownWidth">wrap_content</item>
+        <item name="android:paddingRight">5dp</item>
+        <!-- 弹出层背景颜色 -->
+        <!-- 弹出层垂直方向上的偏移，即在竖直方向上距离Toolbar的距离，值为负则会盖住Toolbar -->
+        <item name="android:dropDownVerticalOffset">5dp</item>
+        <!-- 弹出层水平方向上的偏移，即距离屏幕左边的距离，负值会导致右边出现空隙 -->
+        <item name="android:dropDownHorizontalOffset">0dp</item>
+        <!-- 设置弹出菜单文字颜色 -->
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="mdCheckBox" parent="Theme.AppCompat.Light">
+        <item name="android:colorControlActivated">#2176cb</item>
+        <item name="android:trackTint">#fec6d9</item>
+        <item name="android:colorForeground">#88FFFFFF</item>
+    </style>
+
+
+    <style name="BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/bottomSheetStyleWrapper</item>
+    </style>
+
+    <style name="bottomSheetStyleWrapper" parent="Widget.Design.BottomSheet.Modal">
+        <item name="behavior_peekHeight">500dp</item>
+    </style>
+
+    <style name="MyTabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

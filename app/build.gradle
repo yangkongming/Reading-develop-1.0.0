@@ -1,0 +1,103 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'org.greenrobot.greendao'
+
+
+android {
+    sourceSets.main.jniLibs.srcDirs = ['libs']
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        applicationId "com.hankkin.reading"
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        ndk {
+            abiFilters 'armeabi', 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    splits {
+        abi {
+            enable true
+            reset()
+            include "x86", "armeabi-v7a"
+            universalApk true
+        }
+    }
+}
+
+greendao {
+    //数据库的schema版本，也可以理解为数据库版本号
+    schemaVersion 1
+    //设置DaoMaster、DaoSession、Dao包名，也就是要放置这些类的包的全路径。
+    daoPackage 'com.hankkin.reading.greendao'
+    //设置DaoMaster、DaoSession、Dao目录
+    targetGenDir 'src/main/java'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation rootProject.ext.dependencies["design"]
+    implementation rootProject.ext.dependencies["cardview"]
+    implementation rootProject.ext.dependencies["base-rv-helper"]
+    implementation rootProject.ext.dependencies["green_dao"]
+    implementation rootProject.ext.dependencies["rxpermissions"]
+    implementation rootProject.ext.dependencies["rxjava"]
+    implementation rootProject.ext.dependencies["rxandroid"]
+    implementation rootProject.ext.dependencies["adapter-rxjava"]
+    implementation rootProject.ext.dependencies["converter-gson"]
+    implementation rootProject.ext.dependencies["glide"]
+    implementation rootProject.ext.dependencies["statusbar-utils"]
+    implementation rootProject.ext.dependencies["swipelayout"]
+    implementation rootProject.ext.dependencies["PersistentCookieJar"]
+    implementation rootProject.ext.dependencies["agentweb"]
+    implementation rootProject.ext.dependencies["pickerimg_zhihu"]
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    //materialdialog
+    implementation('com.github.afollestad.material-dialogs:core:0.8.5.8@aar') {
+        transitive = true
+    }
+    //首页tab
+    implementation 'com.github.Andy671:Dachshund-Tab-Layout:v0.3.3'
+    //悬浮按钮
+    implementation 'com.github.clans:fab:1.6.4'
+    //banner
+    implementation 'com.xhb:xbanner:1.4.0'
+    //主题换肤
+    //    implementation 'com.bilibili:magicasakura:0.1.8@aar'
+    //底部弹出dialog
+    implementation 'com.cocosw:bottomsheet:1.3.1@aar'
+    //google流式布局
+    implementation 'com.google.android:flexbox:1.0.0'
+    //手机解锁
+    implementation 'com.github.ihsg:PatternLocker:2.1.0'
+    implementation 'com.github.chrisbanes:PhotoView:2.1.3'
+    //bugly
+    implementation 'com.tencent.bugly:crashreport_upgrade:latest.release'
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+    //内存泄露工具
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.1'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation project(':magicasakura')
+    implementation project(':library')
+}
