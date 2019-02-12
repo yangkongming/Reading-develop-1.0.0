@@ -3,7 +3,7 @@ package com.hankkin.reading.ui.home.articledetail
 import com.hankkin.library.mvp.presenter.RxLifePresenter
 
 /**
- * Created by huanghaijie on 2018/5/16.
+ * Created by wenxin on 2018/1/16.
  */
 class ArticleDetailPresenter : RxLifePresenter<ArticleDetailContract.IView>(), ArticleDetailContract.IPresenter {
 

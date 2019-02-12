@@ -44,7 +44,7 @@ import java.util.*
 
 
 /**
- * Created by huanghaijie on 2018/5/15.
+ * Created by wenxin on 2018/11/15.
  */
 class ToolsFragment : BaseMvpFragment<ToolsContract.IPresenter>(), ToolsContract.IView {
     val REQUEST_CODE_SCAN = 0x1
@@ -67,12 +67,16 @@ class ToolsFragment : BaseMvpFragment<ToolsContract.IPresenter>(), ToolsContract
     override fun initView() {
         tv_translate_weather.text = "正在获取天气..."
         tv_tools_version.text = context?.let { "当前版本：" + AppUtils.getVersionName(it) }
+        //添加单词本
         tv_word_go.setOnClickListener { startActivity(Intent(context, TranslateActivity::class.java)) }
+        //我的单词本
         tv_word_note.setOnClickListener { startActivity(Intent(context, WordNoteActivity::class.java)) }
+        //我的推荐
         tv_word_next.setOnClickListener {
             ViewHelper.startShakeAnim(card_word_every)
             setEveryWord()
         }
+        //小菜鸟
         tv_tools_title.setOnClickListener {
             startActivity(
                     if (!UserControl.isLogin()) {
@@ -81,6 +85,7 @@ class ToolsFragment : BaseMvpFragment<ToolsContract.IPresenter>(), ToolsContract
                         Intent(context, PersonInfoActivity::class.java)
                     })
         }
+        //扫描
         ll_tools_scan.setOnClickListener {
             val intent = Intent(context, CaptureActivity::class.java)
             val bundle = Bundle()
@@ -92,11 +97,13 @@ class ToolsFragment : BaseMvpFragment<ToolsContract.IPresenter>(), ToolsContract
         }
         ll_tools_note.setOnClickListener { startActivity(Intent(context, WordNoteActivity::class.java)) }
         ll_tools_word.setOnClickListener { startActivity(Intent(context, TranslateActivity::class.java)) }
-        ll_tools_pwd.setOnClickListener { if (SPUtils.getInt(Constant.SP_KEY.LOCK_OPEN) != 0) {
-            startActivity(Intent(context, LockSetActivity::class.java))
-        } else {
-            startActivity(Intent(context, AccountListActivity::class.java))
-        } }
+        ll_tools_pwd.setOnClickListener {
+            if (SPUtils.getInt(Constant.SP_KEY.LOCK_OPEN) != 0) {
+                startActivity(Intent(context, LockSetActivity::class.java))
+            } else {
+                startActivity(Intent(context, AccountListActivity::class.java))
+            }
+        }
     }
 
 
@@ -207,7 +214,7 @@ class ToolsFragment : BaseMvpFragment<ToolsContract.IPresenter>(), ToolsContract
                                     notifyDataSetChanged()
                                 }
                                 ToastUtils.showInfo(context!!, "已注销登录!")
-                                tv_tools_title.text = "Hi,小猿猿"
+                                tv_tools_title.text = "Hi,小菜鸟"
                             })
                 }
             }

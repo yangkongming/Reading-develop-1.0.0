@@ -15,7 +15,7 @@ import com.hankkin.reading.utils.ViewHelper
 import kotlinx.android.synthetic.main.fragment_android.*
 
 /**
- * Created by huanghaijie on 2018/5/15.
+ * Created by wenxin on 2018/1/15.
  */
 class AndroidFragment : BaseMvpFragment<AndroidPresenter>(), AndroidContact.IView, SwipeRefreshLayout.OnRefreshListener {
 

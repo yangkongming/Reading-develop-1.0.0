@@ -6,7 +6,7 @@ import com.hankkin.library.mvp.contract.IBaseViewContract
 import com.hankkin.library.mvp.contract.IPresenterContract
 
 /**
- * Created by huanghaijie on 2018/7/8.
+ * Created by wenxin on 2018/1/8.
  */
 interface HotListContact {
     interface IView : IBaseViewContract {
@@ -16,7 +16,7 @@ interface HotListContact {
     }
 
     interface IPresenter : IPresenterContract {
-        fun queryKey(page: Int,key: String)
+        fun queryKey(page: Int, key: String)
         fun getBannerHttp()
     }
 }

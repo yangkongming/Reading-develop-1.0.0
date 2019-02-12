@@ -13,8 +13,8 @@ import com.hankkin.reading.common.Constant
 import com.hankkin.reading.domain.AccountBean
 
 /**
- * @author Hankkin
- * @date 2018/8/14
+ * @author wenxin
+ * @date 2018/11/14
  */
 class AccountAdapter : BaseRecyclerViewAdapter<AccountBean>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseRecyclerViewHolder<AccountBean> {

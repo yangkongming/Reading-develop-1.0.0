@@ -89,7 +89,7 @@ class SearchResultActivity : BaseMvpActivity<HotListPresenter>(), HotListContact
     }
 
     override fun setFail() {
-        ToastUtils.showError(this,resources.getString(R.string.pagelayout_error))
+        ToastUtils.showError(this, resources.getString(R.string.pagelayout_error))
     }
 
 }

@@ -6,7 +6,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 /**
- * Created by huanghaijie on 2018/7/8.
+ * Created by wenxin on 2018/12/8.
  */
 class WxArticlePresenter : RxLifePresenter<WxArticleContact.IView>(), WxArticleContact.IPresenter {
     override fun getWxTabs() {

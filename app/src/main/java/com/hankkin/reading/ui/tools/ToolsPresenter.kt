@@ -7,7 +7,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 /**
- * Created by huanghaijie on 2018/5/16.
+ * Created by wenxin on 2018/11/16.
  */
 class ToolsPresenter : RxLifePresenter<ToolsContract.IView>(), ToolsContract.IPresenter {
 

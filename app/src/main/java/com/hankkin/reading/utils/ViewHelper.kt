@@ -22,11 +22,10 @@ import com.hankkin.reading.glide.Glide4Engine
 import com.hankkin.reading.ui.home.articledetail.CommonWebActivity
 import com.zhihu.matisse.Matisse
 import com.zhihu.matisse.MimeType
-import com.zhihu.matisse.engine.impl.GlideEngine
 
 
 /**
- * Created by huanghaijie on 2018/7/10.
+ * Created by wenxin on 2018/11/10.
  */
 object ViewHelper {
 
@@ -169,8 +168,6 @@ object ViewHelper {
                 .imageEngine(Glide4Engine())
                 .forResult(REQUEST_CODE_CHOOSE)
     }
-
-
 
 
 }

@@ -6,7 +6,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 /**
- * Created by huanghaijie on 2018/5/21.
+ * Created by wenxin on 2018/11/21.
  */
 class RegisterPresenter : RxLifePresenter<RegisterContract.IView>(), RegisterContract.IPresenter {
 

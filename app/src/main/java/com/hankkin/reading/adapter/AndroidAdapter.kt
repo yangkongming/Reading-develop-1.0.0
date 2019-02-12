@@ -23,7 +23,7 @@ import com.hankkin.reading.ui.login.LoginActivity
 import com.hankkin.library.utils.RxBusTools
 
 /**
- * Created by huanghaijie on 2018/7/8.
+ * Created by wenxin on 2018/11/8.
  */
 class AndroidAdapter : BaseRecyclerViewAdapter<ArticleDetailBean>() {
 

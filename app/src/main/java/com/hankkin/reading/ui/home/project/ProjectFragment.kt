@@ -13,7 +13,7 @@ import com.kekstudio.dachshundtablayout.indicators.PointMoveIndicator
 import kotlinx.android.synthetic.main.fragment_project.*
 
 /**
- * Created by huanghaijie on 2018/5/15.
+ * Created by wenxin on 2018/12/15.
  */
 class ProjectFragment : BaseMvpFragment<ProjectPresenter>(), ProjectContact.IView {
 
@@ -51,7 +51,7 @@ class ProjectFragment : BaseMvpFragment<ProjectPresenter>(), ProjectContact.IVie
             val bundle = Bundle()
             val fg = ProjectListFragment()
             bundle.putInt("index", i)
-            bundle.putSerializable("bean",data.get(i))
+            bundle.putSerializable("bean", data.get(i))
             fg.arguments = bundle
             return fg
         }

@@ -11,8 +11,8 @@ import com.hankkin.reading.adapter.base.OnItemLongClickListener
 import com.hankkin.reading.domain.TranslateBean
 
 /**
- * @author Hankkin
- * @date 2018/8/10
+ * @author wenxin
+ * @date 2018/11/10
  */
 class TranHistoryAdapter : BaseRecyclerViewAdapter<TranslateBean>() {
 
@@ -30,10 +30,9 @@ class TranHistoryAdapter : BaseRecyclerViewAdapter<TranslateBean>() {
         override fun onBindViewHolder(bean: TranslateBean?, position: Int) {
             bean?.run {
                 tvKey.text = query
-                if (explains != null){
+                if (explains != null) {
                     tvContent.text = explains.toString()
-                }
-                else{
+                } else {
                     tvContent.text = "暂无释义..."
                 }
                 ll.setOnLongClickListener {

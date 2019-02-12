@@ -6,8 +6,8 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 /**
- * @author Hankkin
- * @date 2018/8/28
+ * @author wenxin
+ * @date 2018/12/28
  */
 class AddToDoPresenter : RxLifePresenter<AddToDoContract.IView>(), AddToDoContract.IPresenter {
     override fun addTodo(map: HashMap<String, Any>) {

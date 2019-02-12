@@ -15,13 +15,13 @@ import com.hankkin.reading.utils.ViewHelper
 import kotlinx.android.synthetic.main.fragment_project_list.*
 
 /**
- * Created by huanghaijie on 2018/5/15.
+ * Created by wenxin on 2018/12/15.
  */
 class ProjectListFragment : BaseMvpFragment<ProjectListPresenter>(), ProjectListContact.IView, SwipeRefreshLayout.OnRefreshListener {
     private lateinit var mAdapter: AndroidAdapter
     private var cateBean: CateBean? = null
     private var mPage: Int = 0
-    private  var mIndex: Int? = 0
+    private var mIndex: Int? = 0
 
     override fun registerPresenter() = ProjectListPresenter::class.java
 
@@ -111,7 +111,7 @@ class ProjectListFragment : BaseMvpFragment<ProjectListPresenter>(), ProjectList
     override fun onEvent(event: EventMap.BaseEvent) {
         when (event) {
             is EventMap.WifiImgEvent -> mAdapter.notifyDataSetChanged()
-            is EventMap.ToUpEvent -> if (((parentFragment as ProjectFragment).getCurrentIndex() == mIndex) && isVisible){
+            is EventMap.ToUpEvent -> if (((parentFragment as ProjectFragment).getCurrentIndex() == mIndex) && isVisible) {
                 xrv_project.smoothScrollToPosition(0)
             }
             is EventMap.HomeRefreshEvent -> onRefresh()

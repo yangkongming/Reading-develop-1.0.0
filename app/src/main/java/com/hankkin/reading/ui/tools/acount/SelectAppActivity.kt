@@ -43,7 +43,7 @@ class SelectAppActivity : BaseActivity() {
             finish()
         }
 
-        et_add_account_search.addTextChangedListener(object : TextWatcher{
+        et_add_account_search.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
             }
 
@@ -59,17 +59,17 @@ class SelectAppActivity : BaseActivity() {
         iv_back_icon_white.setOnClickListener { finish() }
     }
 
-    private fun search(key: String){
-        if (key.isEmpty()){
+    private fun search(key: String) {
+        if (key.isEmpty()) {
             mAdapter.run {
                 clear()
                 addAll(mData)
                 notifyDataSetChanged()
             }
-        }else{
+        } else {
             val newData = mutableListOf<AppInfo>()
             mData.forEach {
-                if (it.name.contains(key)){
+                if (it.name.contains(key)) {
                     newData.add(it)
                 }
             }

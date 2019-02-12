@@ -7,7 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 /**
- * Created by Hankkin on 2018/11/8.
+ * Created by wenxin on 2018/11/8.
  */
 interface GankApi {
 

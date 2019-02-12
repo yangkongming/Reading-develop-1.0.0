@@ -4,7 +4,7 @@ import com.hankkin.reading.domain.HotBean
 import com.hankkin.reading.dao.BaseDaoContract
 
 /**
- * Created by huanghaijie on 2018/7/25.
+ * Created by wenxin on 2018/1/25.
  */
 interface SearchDaoContract : BaseDaoContract {
 

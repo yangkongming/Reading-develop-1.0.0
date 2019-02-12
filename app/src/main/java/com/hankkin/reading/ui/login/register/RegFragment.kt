@@ -16,9 +16,9 @@ import com.hankkin.reading.utils.*
 import kotlinx.android.synthetic.main.fragment_register.*
 
 /**
- * Created by huanghaijie on 2018/5/15.
+ * Created by wenxin on 2018/11/15.
  */
-class RegFragment : BaseMvpFragment<RegisterContract.IPresenter>(), RegisterContract.IView,KeyEditText.KeyPreImeListener {
+class RegFragment : BaseMvpFragment<RegisterContract.IPresenter>(), RegisterContract.IView, KeyEditText.KeyPreImeListener {
 
 
     override fun getLayoutId(): Int {
@@ -26,12 +26,14 @@ class RegFragment : BaseMvpFragment<RegisterContract.IPresenter>(), RegisterCont
     }
 
     override fun initData() {
-        tv_reg_back.setOnClickListener { RxBusTools.getDefault().post(EventMap.LoginSetTabEvent(0)) }
+        tv_reg_back.setOnClickListener {
+            RxBusTools.getDefault().post(EventMap.LoginSetTabEvent(0))
+        }
         reg_btn.setOnClickListener {
-            var map = HashMap<String,String>()
-            map.put(RegisterPresenter.NAME,et_reg_email.text.toString())
-            map.put(RegisterPresenter.PASSWORD,et_reg_pwd.text.toString())
-            map.put(RegisterPresenter.RPASSWORD,et_reg_pwd_repeat.text.toString())
+            var map = HashMap<String, String>()
+            map.put(RegisterPresenter.NAME, et_reg_email.text.toString())
+            map.put(RegisterPresenter.PASSWORD, et_reg_pwd.text.toString())
+            map.put(RegisterPresenter.RPASSWORD, et_reg_pwd_repeat.text.toString())
             getPresenter().verifiyFormat(map)
         }
     }
@@ -45,7 +47,7 @@ class RegFragment : BaseMvpFragment<RegisterContract.IPresenter>(), RegisterCont
         et_reg_pwd_repeat.addTextChangedListener(watcher)
     }
 
-    private val watcher = object : TextWatcher{
+    private val watcher = object : TextWatcher {
         override fun afterTextChanged(s: Editable?) {
             reg_btn.isEnabled = et_reg_email.text.isNotEmpty() && et_reg_pwd.text.isNotEmpty() && et_reg_pwd_repeat.text.isNotEmpty()
         }
@@ -68,9 +70,8 @@ class RegFragment : BaseMvpFragment<RegisterContract.IPresenter>(), RegisterCont
     override fun registerPresenter() = RegisterPresenter::class.java
 
 
-
     override fun verifiyFormatResult(msg: String) {
-        context?.let { ToastUtils.showInfo(it,msg) }
+        context?.let { ToastUtils.showInfo(it, msg) }
     }
 
     override fun regResult(userBean: UserBean) {
@@ -78,7 +79,7 @@ class RegFragment : BaseMvpFragment<RegisterContract.IPresenter>(), RegisterCont
         ViewHelper.showConfirmDialog(context!!,
                 context!!.resources.getString(R.string.reg_suc_toast),
                 MaterialDialog.SingleButtonCallback { dialog, which ->
-                    RxBusTools.getDefault().post(EventMap.LoginSetTabEvent(0,et_reg_email.text.toString(),et_reg_pwd.text.toString()))
+                    RxBusTools.getDefault().post(EventMap.LoginSetTabEvent(0, et_reg_email.text.toString(), et_reg_pwd.text.toString()))
                 })
     }
 

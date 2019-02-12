@@ -88,28 +88,31 @@ object EventMap {
     class WifiImgEvent : BaseEvent()
     class XrvScollToPosEvent(val index: Int) : BaseEvent()
     class SelectAppEvent(val bean: AppInfo) : BaseEvent()
-    class SearchHistoryDeleteEvent(val position:Int) : BaseEvent()
+    class SearchHistoryDeleteEvent(val position: Int) : BaseEvent()
 
-    class LoginSetTabEvent() : BaseEvent(){
-         var name: String = ""
-         var pwd: String = ""
+    class LoginSetTabEvent() : BaseEvent() {
+        var name: String = ""
+        var pwd: String = ""
         var index: Int = 0
-        constructor( index: Int,name: String, pwd: String) : this(){
+
+        constructor(index: Int, name: String, pwd: String) : this() {
             this.name = name
             this.pwd = pwd
             this.index = index
         }
-        constructor( index: Int) : this(){
+
+        constructor(index: Int) : this() {
             this.index = index
         }
     }
 
-    class CollectEvent(val flag: Int,val id: Int) : BaseEvent(){
+    class CollectEvent(val flag: Int, val id: Int) : BaseEvent() {
         companion object {
             val COLLECT: Int = 0x1
             val UNCOLLECT: Int = 0x2
         }
     }
-    class PersonClickEvent(val index: Int,bean: PersonListBean): BaseEvent()
+
+    class PersonClickEvent(val index: Int, bean: PersonListBean) : BaseEvent()
 
 }

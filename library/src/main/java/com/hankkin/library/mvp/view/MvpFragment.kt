@@ -6,7 +6,7 @@ import com.hankkin.library.mvp.contract.IBaseViewContract
 import com.hankkin.library.mvp.contract.IPresenterContract
 
 /**
- * Created by huanghaijie on 2018/5/16.
+ * Created by wenxin on 2018/11/16.
  */
 abstract class MvpFragment<out T : IPresenterContract> : Fragment(), IBaseView<T>, IBaseViewContract {
 

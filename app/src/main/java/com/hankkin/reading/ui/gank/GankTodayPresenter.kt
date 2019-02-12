@@ -6,12 +6,11 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 /**
- * Created by Hankkin on 2018/11/8.
+ * Created by wenxin on 2018/1/8.
  */
-class GankTodayPresenter : RxLifePresenter<GankTodayContract.IView>(),GankTodayContract.IPresenter{
+class GankTodayPresenter : RxLifePresenter<GankTodayContract.IView>(), GankTodayContract.IPresenter {
     override fun getGanksToday() {
-        HttpClientUtils.Builder.getGankHttp().
-                getToday()
+        HttpClientUtils.Builder.getGankHttp().getToday()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {

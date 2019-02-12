@@ -2,8 +2,8 @@ package com.hankkin.reading.dao
 
 import java.util.*
 /**
- * @author Hankkin
- * @date 2018/08/10
+ * @author wenxin
+ * @date 2018/11/10
  */
 class DaoFactoryHolder {
 

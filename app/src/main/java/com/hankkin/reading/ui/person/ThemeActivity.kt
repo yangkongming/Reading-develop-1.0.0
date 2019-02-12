@@ -67,7 +67,7 @@ class ThemeActivity : BaseActivity() {
         mAdapter.addAll(data)
         rv_theme.adapter = mAdapter
 
-        mAdapter.setOnItemClickListener { t, position ->
+        mAdapter.setOnItemClickListener { t, _ ->
             mCurrentTheme = t.id
             iv_theme_expamle.setImageResource(t.pic)
             for (d in data) {

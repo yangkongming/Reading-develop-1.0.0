@@ -24,7 +24,7 @@ import kotlinx.android.synthetic.main.fragment_android.*
 import kotlinx.android.synthetic.main.fragment_hot_list.*
 
 /**
- * Created by huanghaijie on 2018/5/15.
+ * Created by wenxin on 2018/1/15.
  */
 class HotListFragment : BaseMvpFragment<HotListPresenter>(), HotListContact.IView, SwipeRefreshLayout.OnRefreshListener {
 

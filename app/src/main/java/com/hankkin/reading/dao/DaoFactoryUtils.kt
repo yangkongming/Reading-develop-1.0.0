@@ -10,8 +10,8 @@ import com.hankkin.reading.ui.tools.wordnote.WordNoteDao
 import com.hankkin.reading.ui.tools.wordnote.WordNoteDaoContract
 
 /**
- * @author Hankkin
- * @date 2018/08/10
+ * @author wenxin
+ * @date 2018/11/10
  */
 object DaoFactoryUtils {
 

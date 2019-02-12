@@ -3,7 +3,7 @@ package com.hankkin.reading.domain
 import java.io.Serializable
 
 /**
- * Created by huanghaijie on 2018/7/8.
+ * Created by wenxin on 2018/11/8.
  */
 data class ArticleBean(val curPage: Int,
                        val offset: Int,

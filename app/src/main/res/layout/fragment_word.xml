@@ -11,10 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/theme_color_primary"
-        android:paddingBottom="@dimen/dp_20"
+        android:paddingLeft="@dimen/dp_10"
         android:paddingTop="@dimen/dp_20"
         android:paddingRight="@dimen/dp_10"
-        android:paddingLeft="@dimen/dp_10">
+        android:paddingBottom="@dimen/dp_20">
 
         <TextView
             android:id="@+id/tv_tools_title"
@@ -24,14 +24,6 @@
             android:textColor="@android:color/white"
             android:textSize="@dimen/sp_18"
             android:textStyle="italic|bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_tools_title"
-            android:text="Welcome to Reading"
-            android:textColor="@color/white"
-            android:textSize="@dimen/sp_12" />
 
         <ImageView
             android:id="@+id/iv_translate_weather"
@@ -53,8 +45,7 @@
     </com.bilibili.magicasakura.widgets.TintRelativeLayout>
 
 
-
-    <include layout="@layout/layout_tools"/>
+    <include layout="@layout/layout_tools" />
 
 
     <android.support.v4.widget.NestedScrollView
@@ -82,11 +73,12 @@
 
                     <include
                         android:id="@+id/layout_word_every"
-                        layout="@layout/layout_word_every"/>
+                        layout="@layout/layout_word_every" />
+
                     <include
-                        android:visibility="gone"
                         android:id="@+id/layout_word_no_data"
-                        layout="@layout/layout_word_no_data"/>
+                        layout="@layout/layout_word_no_data"
+                        android:visibility="gone" />
 
 
                 </LinearLayout>
@@ -110,14 +102,14 @@
             </android.support.v7.widget.CardView>
 
             <TextView
-                android:layout_marginTop="@dimen/dp_20"
-                android:textSize="@dimen/sp_14"
-                android:padding="@dimen/dp_10"
-                android:layout_gravity="bottom"
                 android:id="@+id/tv_tools_version"
-                android:gravity="center"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="@dimen/dp_20"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:textSize="@dimen/sp_14" />
 
         </LinearLayout>
 

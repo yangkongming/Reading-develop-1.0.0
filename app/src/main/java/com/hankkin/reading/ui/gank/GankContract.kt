@@ -5,14 +5,14 @@ import com.hankkin.library.mvp.contract.IPresenterContract
 import com.hankkin.reading.domain.GankBean
 
 /**
- * Created by Hankkin on 2018/11/8.
+ * Created by wenxin on 2018/1/8.
  */
 interface GankContract {
-    interface IView : IBaseViewContract{
+    interface IView : IBaseViewContract {
         fun setGanks(gankBean: GankBean)
     }
 
     interface IPresenter : IPresenterContract {
-        fun getGanks(cate: String,page: Int)
+        fun getGanks(cate: String, page: Int)
     }
 }

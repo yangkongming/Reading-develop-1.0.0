@@ -3,7 +3,7 @@ package com.hankkin.reading.domain
 import java.io.Serializable
 
 /**
- * Created by Hankkin on 2018/11/6.
+ * Created by wenxin on 2018/11/6.
  */
 data class WxArticleBean(val courseId: Int,
                          val id: Int,

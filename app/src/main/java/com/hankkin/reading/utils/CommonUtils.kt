@@ -12,7 +12,7 @@ import java.util.*
 
 
 /**
- * Created by huanghaijie on 2018/7/10.
+ * Created by wenxin on 2018/11/10.
  */
 object CommonUtils {
 

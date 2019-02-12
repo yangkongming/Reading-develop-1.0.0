@@ -1,7 +1,7 @@
 package com.hankkin.reading.base
 
 /**
- * Created by huanghaijie on 2018/6/8.
+ * Created by wenxin on 2018/11/8.
  */
 import android.os.Bundle
 import com.hankkin.library.mvp.contract.IPresenterContract
@@ -68,7 +68,7 @@ abstract class BaseMvpActivity<out P : IPresenterContract> : MvpActivity<P>() {
      * 设置白底黑字
      */
     protected fun setMiuiStatusBar() {
-        MyStatusBarUtil.setColorForSwipeBack(this,resources.getColor(R.color.white),0)
+        MyStatusBarUtil.setColorForSwipeBack(this, resources.getColor(R.color.white), 0)
         StatusBarUtil.setLightMode(this)
     }
 

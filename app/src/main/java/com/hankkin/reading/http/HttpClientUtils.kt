@@ -21,8 +21,8 @@ interface HttpClientUtils {
             return ApiFactory.instance.create(ToolsApi::class.java, Constant.ToolsUrl.WEATHER_URL)
         }
 
-        fun getGankHttp(): GankApi{
-            return ApiFactory.instance.create(GankApi::class.java,Constant.GankUrl.BASE_URL)
+        fun getGankHttp(): GankApi {
+            return ApiFactory.instance.create(GankApi::class.java, Constant.GankUrl.BASE_URL)
         }
     }
 }

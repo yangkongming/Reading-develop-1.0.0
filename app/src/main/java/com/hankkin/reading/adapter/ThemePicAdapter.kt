@@ -10,8 +10,8 @@ import com.hankkin.reading.adapter.base.OnItemClickListener
 import com.hankkin.reading.domain.ThemeItemBean
 
 /**
- * @author Hankkin
- * @date 2018/8/23
+ * @author wenxin
+ * @date 2018/11/23
  */
 class ThemePicAdapter : BaseRecyclerViewAdapter<ThemeItemBean>() {
 

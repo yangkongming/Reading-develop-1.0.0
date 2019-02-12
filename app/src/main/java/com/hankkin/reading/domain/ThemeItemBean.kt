@@ -1,7 +1,7 @@
 package com.hankkin.reading.domain
 
 /**
- * @author Hankkin
- * @date 2018/8/23
+ * @author wenxin
+ * @date 2018/11/23
  */
-data class ThemeItemBean(var id: Int,var isSelected: Boolean,var icon: Int,var pic: Int)
+data class ThemeItemBean(var id: Int, var isSelected: Boolean, var icon: Int, var pic: Int)

@@ -7,8 +7,8 @@ import com.hankkin.reading.greendao.WordNoteBeanDao
 import com.hankkin.reading.dao.BaseDao
 
 /**
- * @author Hankkin
- * @date 2018/8/12
+ * @author wenxin
+ * @date 2018/12/12
  */
 class WordNoteDao : BaseDao(), WordNoteDaoContract {
 

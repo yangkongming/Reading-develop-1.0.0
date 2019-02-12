@@ -35,10 +35,10 @@ class AddToDoActivity : BaseMvpActivity<AddToDoContract.IPresenter>(), AddToDoCo
 
 
     companion object {
-        fun intentTo(context: Context,toDoListBean: ToDoListBean?){
-            val intent = Intent(context,AddToDoActivity::class.java)
+        fun intentTo(context: Context, toDoListBean: ToDoListBean?) {
+            val intent = Intent(context, AddToDoActivity::class.java)
             val bundle = Bundle()
-            bundle.putSerializable(Constant.CONSTANT_KEY.KEY_TODO,toDoListBean)
+            bundle.putSerializable(Constant.CONSTANT_KEY.KEY_TODO, toDoListBean)
             intent.putExtras(bundle)
             context.startActivity(intent)
         }

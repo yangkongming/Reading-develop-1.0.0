@@ -31,12 +31,12 @@ class FriendListActivity : BaseMvpActivity<FriendPresenter>(), FriendContract.IV
         refresh_friend.isRefreshing = false
     }
 
-    fun setMap(){
-        val map =  HashMap<String,Any>()
-        map.put("page",1)
-        map.put("pageSize",20)
-        map.put("relation",1)
-        map.put("access_token",SPUtils.getString(UserControl.TOKEN))
+    fun setMap() {
+        val map = HashMap<String, Any>()
+        map.put("page", 1)
+        map.put("pageSize", 20)
+        map.put("relation", 1)
+        map.put("access_token", SPUtils.getString(UserControl.TOKEN))
         getPresenter().getFriendList(map)
     }
 

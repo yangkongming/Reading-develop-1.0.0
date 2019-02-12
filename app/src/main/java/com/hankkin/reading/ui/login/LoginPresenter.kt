@@ -6,9 +6,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 /**
- * Created by huanghaijie on 2018/5/21.
+ * Created by wenxin on 2018/11/21.
  */
-class LoginPresenter: RxLifePresenter<LoginContract.IView>(), LoginContract.IPresenter {
+class LoginPresenter : RxLifePresenter<LoginContract.IView>(), LoginContract.IPresenter {
 
     override fun loginHttp(map: HashMap<String, Any>) {
         getMvpView().showLoading()

@@ -6,7 +6,7 @@ import com.bumptech.glide.Glide
 import java.io.File
 
 /**
- * Created by huanghaijie on 2018/8/17.
+ * Created by wenxin on 2018/11/17.
  */
 object CacheUtils {
 
@@ -31,7 +31,7 @@ object CacheUtils {
 
 
     fun getDBCacheSize(context: Context, dbName: String): Double =
-                    context.getDatabasePath(dbName).length().toDouble()
+            context.getDatabasePath(dbName).length().toDouble()
 
 
     fun getGlideCacheSize(context: Context): Double =

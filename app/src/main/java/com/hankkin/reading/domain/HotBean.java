@@ -7,7 +7,7 @@ import org.greenrobot.greendao.annotation.Id;
 import java.io.Serializable;
 
 @Entity
-public class HotBean implements Serializable{
+public class HotBean implements Serializable {
     private static final long serialVersionUID = 5492576431298717167L;
     @Id
     private long id;

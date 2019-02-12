@@ -22,7 +22,7 @@ import com.hankkin.reading.utils.ThemeHelper
 import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
- * Created by huanghaijie on 2018/5/15.
+ * Created by wenxin on 2018/11/15.
  */
 class HomeFragment : BaseFragment() {
 
@@ -38,7 +38,7 @@ class HomeFragment : BaseFragment() {
         iv_title_one.setOnClickListener { setCurrent(0) }
         iv_title_two.setOnClickListener { setCurrent(1) }
         iv_title_three.setOnClickListener { setCurrent(2) }
-        iv_search.setOnClickListener { startActivity(Intent(activity,SearchActivity::class.java)) }
+        iv_search.setOnClickListener { startActivity(Intent(activity, SearchActivity::class.java)) }
     }
 
 
@@ -51,7 +51,7 @@ class HomeFragment : BaseFragment() {
     }
 
     override fun initData() {
-        val mAdapter = HomeFragmentPagerAdapter(childFragmentManager,mFgList )
+        val mAdapter = HomeFragmentPagerAdapter(childFragmentManager, mFgList)
         vp_home.run {
             adapter = mAdapter
             offscreenPageLimit = 3
@@ -73,7 +73,7 @@ class HomeFragment : BaseFragment() {
         setFabClickListener()
     }
 
-    private fun setFabClickListener(){
+    private fun setFabClickListener() {
         fab_menu_add.setClosedOnTouchOutside(true)
         fab_up.setOnClickListener {
             RxBusTools.getDefault().post(EventMap.ToUpEvent())
@@ -84,12 +84,12 @@ class HomeFragment : BaseFragment() {
             fab_menu_add.close(true)
         }
         fab_write.setOnClickListener {
-            context?.let { it1 -> ToastUtils.showInfo(it1,"敬请期待...") }
+            context?.let { it1 -> ToastUtils.showInfo(it1, "敬请期待...") }
             fab_menu_add.close(true)
         }
     }
 
-    private fun setFabColor(){
+    private fun setFabColor() {
         fab_menu_add.setMenuButtonColorNormalResId(ThemeHelper.getCurrentColor(context))
         fab_up.setColorNormalResId(ThemeHelper.getCurrentColor(context))
         fab_refresh.setColorNormalResId(ThemeHelper.getCurrentColor(context))
@@ -132,7 +132,7 @@ class HomeFragment : BaseFragment() {
     }
 
     override fun onEvent(event: EventMap.BaseEvent) {
-        if (event is EventMap.ChangeFabEvent){
+        if (event is EventMap.ChangeFabEvent) {
             setFabColor()
         }
     }

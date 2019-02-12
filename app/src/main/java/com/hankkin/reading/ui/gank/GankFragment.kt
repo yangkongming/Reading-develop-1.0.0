@@ -10,10 +10,9 @@ import com.kekstudio.dachshundtablayout.indicators.PointMoveIndicator
 import kotlinx.android.synthetic.main.fragment_gank.*
 
 /**
- * Created by Hankkin on 2018/11/8.
+ * Created by wenxin on 2018/1/8.
  */
-class GankFragment : BaseFragment(){
-
+class GankFragment : BaseFragment() {
 
 
     override fun getLayoutId() = R.layout.fragment_gank
@@ -41,7 +40,7 @@ class GankFragment : BaseFragment(){
                 GankTodayFragment(),
                 GankAndroidFragment()
         )
-        private val titles = listOf<String>("今日推荐","Android")
+        private val titles = listOf<String>("今日推荐", "Android")
 
         override fun getItem(i: Int): Fragment {
             return mFgList[i]

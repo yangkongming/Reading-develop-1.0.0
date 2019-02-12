@@ -24,9 +24,9 @@ class MyCollectPresenter : RxLifePresenter<MyCollectContract.IView>(), MyCollect
                 .collectArticle(id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribeNx ({
+                .subscribeNx({
                     getMvpView().collectResult(id)
-                },{
+                }, {
                     getMvpView().setFail()
                 }).bindRxLifeEx(RxLife.ON_DESTROY)
     }
@@ -36,9 +36,9 @@ class MyCollectPresenter : RxLifePresenter<MyCollectContract.IView>(), MyCollect
                 .cancelCollectArticle(id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribeNx ({
+                .subscribeNx({
                     getMvpView().cancelCollectResult(id)
-                },{
+                }, {
                     getMvpView().setFail()
                 }).bindRxLifeEx(RxLife.ON_DESTROY)
     }

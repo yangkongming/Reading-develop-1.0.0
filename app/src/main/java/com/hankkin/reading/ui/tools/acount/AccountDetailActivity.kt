@@ -41,12 +41,12 @@ class AccountDetailActivity : BaseActivity() {
             ViewHelper.showConfirmDialog(this,
                     resources.getString(R.string.account_detail_delete_hint),
                     MaterialDialog.SingleButtonCallback { dialog, which ->
-                id?.let { it1 -> DaoFactory.getProtocol(AccountDaoContract::class.java).deleteAccountById(it1) }
-                ToastUtils.showInfo(this, resources.getString(R.string.account_detail_delete_success_hint))
-                RxBusTools.getDefault().post(EventMap.UpdateAccountListEvent())
-                dialog.dismiss()
-                finish()
-            })
+                        id?.let { it1 -> DaoFactory.getProtocol(AccountDaoContract::class.java).deleteAccountById(it1) }
+                        ToastUtils.showInfo(this, resources.getString(R.string.account_detail_delete_success_hint))
+                        RxBusTools.getDefault().post(EventMap.UpdateAccountListEvent())
+                        dialog.dismiss()
+                        finish()
+                    })
         }
         fab_edit_acount.setOnClickListener {
             id?.let { it1 ->

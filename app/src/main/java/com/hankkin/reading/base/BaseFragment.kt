@@ -13,7 +13,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Consumer
 
 /**
- * Created by huanghaijie on 2018/5/15.
+ * Created by wenxin on 2018/11/15.
  */
 abstract class BaseFragment : Fragment() {
 
@@ -28,7 +28,7 @@ abstract class BaseFragment : Fragment() {
 
     private var isFirstLoad = true
 
-     var disposables = CompositeDisposable()
+    var disposables = CompositeDisposable()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,18 +60,18 @@ abstract class BaseFragment : Fragment() {
     }
 
 
-    open fun isHasBus(): Boolean{
+    open fun isHasBus(): Boolean {
         return false
     }
 
-    protected fun registerEvent(){
-        if (isHasBus()){
+    protected fun registerEvent() {
+        if (isHasBus()) {
             val disposable = RxBusTools.getDefault().register(EventMap.BaseEvent::class.java, Consumer { onEvent(it) })
             disposables.add(disposable)
         }
     }
 
-    open  fun onEvent(event: EventMap.BaseEvent){
+    open fun onEvent(event: EventMap.BaseEvent) {
     }
 
     protected abstract fun getLayoutId(): Int

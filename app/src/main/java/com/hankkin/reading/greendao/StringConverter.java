@@ -9,14 +9,13 @@ import java.util.List;
  * Created by danny.jiang on 17/6/20.
  */
 
-public class StringConverter implements PropertyConverter<List<String>, String>{
+public class StringConverter implements PropertyConverter<List<String>, String> {
 
     @Override
     public List<String> convertToEntityProperty(String databaseValue) {
         if (databaseValue == null) {
             return null;
-        }
-        else {
+        } else {
             List<String> list = Arrays.asList(databaseValue.split(","));
             return list;
         }
@@ -24,12 +23,11 @@ public class StringConverter implements PropertyConverter<List<String>, String>{
 
     @Override
     public String convertToDatabaseValue(List<String> entityProperty) {
-        if(entityProperty==null){
+        if (entityProperty == null) {
             return null;
-        }
-        else{
-            StringBuilder sb= new StringBuilder();
-            for(String link:entityProperty){
+        } else {
+            StringBuilder sb = new StringBuilder();
+            for (String link : entityProperty) {
                 sb.append(link);
                 sb.append(",");
             }

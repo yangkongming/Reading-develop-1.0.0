@@ -13,6 +13,7 @@ class ApiFactory {
             instance = ApiFactory()
         }
     }
+
     private var commonApi: Any? = null
     private var toolsApi: Any? = null
     private var osChinaApi: Any? = null
@@ -44,9 +45,9 @@ class ApiFactory {
                 }
                 return osChinaApi as T
             }
-            Constant.GankUrl.BASE_URL ->{
-                if (gankApi == null){
-                    synchronized(ApiFactory::class.java){
+            Constant.GankUrl.BASE_URL -> {
+                if (gankApi == null) {
+                    synchronized(ApiFactory::class.java) {
                         gankApi = HttpClient.getBuilder(type).build().create(clazz)
                     }
                 }

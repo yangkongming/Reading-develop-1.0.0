@@ -6,7 +6,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 /**
- * Created by huanghaijie on 2018/7/8.
+ * Created by wenxin on 2018/1/8.
  */
 class HotListPresenter : RxLifePresenter<HotListContact.IView>(), HotListContact.IPresenter {
     override fun queryKey(page: Int, key: String) {

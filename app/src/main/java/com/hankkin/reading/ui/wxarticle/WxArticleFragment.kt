@@ -18,7 +18,7 @@ import com.kekstudio.dachshundtablayout.indicators.PointMoveIndicator
 import kotlinx.android.synthetic.main.fragment_wxarticle.*
 
 /**
- * Created by Hankkin on 2018/11/6.
+ * Created by wenxin on 2018/12/6.
  */
 class WxArticleFragment : BaseMvpFragment<WxArticlePresenter>(), WxArticleContact.IView {
 
@@ -29,7 +29,7 @@ class WxArticleFragment : BaseMvpFragment<WxArticlePresenter>(), WxArticleContac
     override fun registerPresenter() = WxArticlePresenter::class.java
 
     override fun initView() {
-        toobar_wx.setOnClickListener(object : DoubleClickListener(){
+        toobar_wx.setOnClickListener(object : DoubleClickListener() {
             override fun onDoubleClick(v: View?) {
                 RxBusTools.getDefault().post(EventMap.XrvScollToPosEvent(vp_wx.currentItem))
             }
@@ -38,8 +38,8 @@ class WxArticleFragment : BaseMvpFragment<WxArticlePresenter>(), WxArticleContac
 
     override fun initData() {
         Handler().postDelayed({
-            ToastUtils.showTarget(context!!,resources.getString(R.string.double_click_to_top),ll_wx_top)
-        },1000)
+            ToastUtils.showTarget(context!!, resources.getString(R.string.double_click_to_top), ll_wx_top)
+        }, 1000)
         getPresenter().getWxTabs()
     }
 

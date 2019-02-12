@@ -15,8 +15,8 @@ import com.hankkin.reading.event.EventMap
 import com.hankkin.reading.utils.ViewHelper
 
 /**
- * @author Hankkin
- * @date 2018/8/26
+ * @author wenxin
+ * @date 2018/11/26
  */
 class DoneAdapter : BaseRecyclerViewAdapter<ToDoListBean>() {
 
@@ -30,10 +30,10 @@ class DoneAdapter : BaseRecyclerViewAdapter<ToDoListBean>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseRecyclerViewHolder<ToDoListBean> {
-        return HorViewHolder(parent, R.layout.layout_done_item, viewType,onItemLongClickListener)
+        return HorViewHolder(parent, R.layout.layout_done_item, viewType, onItemLongClickListener)
     }
 
-    private class HorViewHolder(parent: ViewGroup, layoutId: Int, viewType: Int,val onItemLongClickListener: OnItemLongClickListener<ToDoListBean>) : BaseRecyclerViewHolder<ToDoListBean>(parent, layoutId) {
+    private class HorViewHolder(parent: ViewGroup, layoutId: Int, viewType: Int, val onItemLongClickListener: OnItemLongClickListener<ToDoListBean>) : BaseRecyclerViewHolder<ToDoListBean>(parent, layoutId) {
         private val tvTitle by lazy { itemView.findViewById<TextView>(R.id.tv_adapter_todo_title) }
         private val tvContent by lazy { itemView.findViewById<TextView>(R.id.tv_adapter_todo_content) }
         private val tvTime by lazy { itemView.findViewById<TextView>(R.id.tv_adapter_todo_complete_time) }
@@ -57,7 +57,7 @@ class DoneAdapter : BaseRecyclerViewAdapter<ToDoListBean>() {
             }
 
             llDone.setOnLongClickListener {
-                onItemLongClickListener.onLongClick(bean,position)
+                onItemLongClickListener.onLongClick(bean, position)
                 false
             }
         }

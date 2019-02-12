@@ -30,7 +30,7 @@ class LockSetActivity : BaseActivity() {
 
     override fun initData() {
         patternHelper = PatternHelper()
-        pattern_lock_view.setOnPatternChangedListener(object : OnPatternChangeListener{
+        pattern_lock_view.setOnPatternChangedListener(object : OnPatternChangeListener {
             override fun onChange(p0: PatternLockerView?, p1: MutableList<Int>?) {
 
             }
@@ -53,7 +53,7 @@ class LockSetActivity : BaseActivity() {
     }
 
 
-    private fun setLockStyle(){
+    private fun setLockStyle() {
         pattern_indicator_view.setFillColor(resources.getColor(R.color.white))
                 .setNormalColor(resources.getColor(ThemeHelper.getCurrentColor(this)))
                 .setHitColor(resources.getColor(ThemeHelper.getCurrentColor(this)))
@@ -73,9 +73,9 @@ class LockSetActivity : BaseActivity() {
     }
 
     private fun isPatternOk(hitList: List<Int>): Boolean {
-        if (SPUtils.getString(PatternHelper.GESTURE_PWD_KEY).isNotEmpty()){
+        if (SPUtils.getString(PatternHelper.GESTURE_PWD_KEY).isNotEmpty()) {
             this.patternHelper.validateForChecking(hitList)
-        }else{
+        } else {
             this.patternHelper.validateForSetting(hitList)
         }
         return this.patternHelper.isOk
@@ -91,7 +91,7 @@ class LockSetActivity : BaseActivity() {
 
     private fun finishIfNeeded() {
         if (this.patternHelper.isFinish) {
-            startActivity(Intent(this,AccountListActivity::class.java))
+            startActivity(Intent(this, AccountListActivity::class.java))
             finish()
         }
     }

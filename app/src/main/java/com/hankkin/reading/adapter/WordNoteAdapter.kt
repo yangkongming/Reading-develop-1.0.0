@@ -12,8 +12,8 @@ import com.hankkin.reading.adapter.base.OnItemClickListener
 import com.hankkin.reading.adapter.base.OnItemLongClickListener
 
 /**
- * @author Hankkin
- * @date 2018/8/12
+ * @author wenxin
+ * @date 2018/11/12
  */
 class WordNoteAdapter : BaseRecyclerViewAdapter<WordNoteBean>() {
 

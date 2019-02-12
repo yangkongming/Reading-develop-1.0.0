@@ -45,7 +45,7 @@ class KuaiDiActivity : BaseActivity() {
         et_kuaidi_number.addTextChangedListener(watcher)
         et_kuaidi_company.addTextChangedListener(watcher)
         et_kuaidi_company.onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
-            if(hasFocus){
+            if (hasFocus) {
                 showCompany(data)
             }
         }
@@ -55,9 +55,9 @@ class KuaiDiActivity : BaseActivity() {
         }
     }
 
-    private fun showCompany(data: MutableList<String>){
+    private fun showCompany(data: MutableList<String>) {
         et_kuaidi_company.inputType = InputType.TYPE_NULL
-        ViewHelper.showListTitleDialog(this,"请选择快递", data,
+        ViewHelper.showListTitleDialog(this, "请选择快递", data,
                 MaterialDialog.ListCallback { dialog, itemView, which, text ->
                     et_kuaidi_company.setText(mCompanys[which].name)
                     mSelectCompany = mCompanys[which]

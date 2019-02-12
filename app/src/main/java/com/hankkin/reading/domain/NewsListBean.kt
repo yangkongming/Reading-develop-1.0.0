@@ -1,7 +1,7 @@
 package com.hankkin.reading.domain
 
 /**
- * Created by huanghaijie on 2018/7/6.
+ * Created by wenxin on 2018/11/6.
  */
 data class NewsListBean(val id: Int,
                         val author: String,

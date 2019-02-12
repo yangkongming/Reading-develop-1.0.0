@@ -17,7 +17,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Consumer
 
 /**
- * Created by huanghaijie on 2018/5/15.
+ * Created by wenxin on 2018/11/15.
  */
 abstract class BaseMvpFragment<out T : IPresenterContract> : MvpFragment<T>() {
 
@@ -36,7 +36,6 @@ abstract class BaseMvpFragment<out T : IPresenterContract> : MvpFragment<T>() {
     protected lateinit var mPageLayout: PageLayout
 
 
-
     override fun onAttach(context: Context?) {
         super.onAttach(context)
         TAG = javaClass.simpleName
@@ -52,7 +51,7 @@ abstract class BaseMvpFragment<out T : IPresenterContract> : MvpFragment<T>() {
         return inflater.inflate(getLayoutId(), container, false)
     }
 
-    protected fun initPageLayout(targetView: Any){
+    protected fun initPageLayout(targetView: Any) {
         mPageLayout = PageLayout.Builder(context!!)
                 .initPage(targetView)
                 .setDefaultEmptyText(resources.getString(R.string.pagelayout_empty))

@@ -79,8 +79,7 @@ class AccountListActivity : BaseActivity() {
         if (mData == null || mData!!.size == 0) {
             ToastUtils.showInfo(this, resources.getString(R.string.account_no_data_hint))
             mPageLayout?.showEmpty()
-        }
-        else{
+        } else {
             mPageLayout?.hide()
         }
     }

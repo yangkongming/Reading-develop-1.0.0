@@ -34,12 +34,10 @@ class SearchPresenter : RxLifePresenter<SearchContract.IView>(), SearchContract.
                 .subscribeNx({
                     getMvpView().getHotResult(it.data)
                     getMvpView().hideLoading()
-                },{
+                }, {
                     getMvpView().hideLoading()
                 }).bindRxLifeEx(RxLife.ON_DESTROY)
     }
-
-
 
 
 }

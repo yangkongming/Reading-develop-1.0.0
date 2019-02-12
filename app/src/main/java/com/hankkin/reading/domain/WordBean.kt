@@ -1,11 +1,11 @@
 package com.hankkin.reading.domain
 
 /**
- * Created by huanghaijie on 2018/5/17.
+ * Created by wenxin on 2018/11/17.
  */
 data class WordBean(val id: Int, val title: String, val star: Int, val type: String,
-                val phonetics: MutableList<Phonetics>, val paraphrases: HashMap<String,MutableList<String>>,
-                val ranks: MutableList<String>?)
+                    val phonetics: MutableList<Phonetics>, val paraphrases: HashMap<String, MutableList<String>>,
+                    val ranks: MutableList<String>?)
 
 data class Phonetics(val type: Int, val name: String, val url: String, val content: String)
 

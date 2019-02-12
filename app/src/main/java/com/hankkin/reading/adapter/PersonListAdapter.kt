@@ -12,7 +12,7 @@ import com.hankkin.reading.domain.PersonListBean
 import com.hankkin.reading.event.EventMap
 
 /**
- * Created by huanghaijie on 2018/6/28.
+ * Created by wenxin on 2018/11/28.
  */
 class PersonListAdapter : BaseRecyclerViewAdapter<PersonListBean>() {
 
@@ -31,7 +31,7 @@ class PersonListAdapter : BaseRecyclerViewAdapter<PersonListBean>() {
                 tvText.text = text
                 ivIcon.setImageResource(icon)
                 rlItem.setOnRippleCompleteListener {
-                    RxBusTools.getDefault().post(EventMap.PersonClickEvent(position,this))
+                    RxBusTools.getDefault().post(EventMap.PersonClickEvent(position, this))
                 }
             }
         }

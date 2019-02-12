@@ -12,7 +12,7 @@ import com.hankkin.reading.domain.WxArticleListItemBean
 import com.hankkin.reading.ui.home.articledetail.CommonWebActivity
 
 /**
- * Created by Hankkin on 2018/11/6.
+ * Created by wenxin on 2018/11/6.
  */
 class WxArticleListAdapter : BaseRecyclerViewAdapter<WxArticleListItemBean>() {
 

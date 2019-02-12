@@ -6,7 +6,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 /**
- * Created by huanghaijie on 2018/7/8.
+ * Created by wenxin on 2018/1/8.
  */
 class AndroidPresenter : RxLifePresenter<AndroidContact.IView>(), AndroidContact.IPresenter {
     override fun cancelCollectHttp(id: Int) {
@@ -14,9 +14,9 @@ class AndroidPresenter : RxLifePresenter<AndroidContact.IView>(), AndroidContact
                 .cancelCollectArticle(id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribeNx ({
+                .subscribeNx({
                     getMvpView().cancelCollectResult(id)
-                },{
+                }, {
                     getMvpView().setFail()
                 }).bindRxLifeEx(RxLife.ON_DESTROY)
     }
@@ -26,9 +26,9 @@ class AndroidPresenter : RxLifePresenter<AndroidContact.IView>(), AndroidContact
                 .collectArticle(id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribeNx ({
+                .subscribeNx({
                     getMvpView().collectResult(id)
-                },{
+                }, {
                     getMvpView().setFail()
                 }).bindRxLifeEx(RxLife.ON_DESTROY)
     }
@@ -38,9 +38,9 @@ class AndroidPresenter : RxLifePresenter<AndroidContact.IView>(), AndroidContact
                 .getArticle(page)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribeNx ({
+                .subscribeNx({
                     getMvpView().setArticle(it.data)
-                },{
+                }, {
                     getMvpView().setFail()
                 }).bindRxLifeEx(RxLife.ON_DESTROY)
     }

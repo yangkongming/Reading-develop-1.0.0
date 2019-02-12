@@ -4,7 +4,7 @@ import com.hankkin.reading.domain.TranslateBean
 import com.hankkin.reading.dao.BaseDao
 
 /**
- * Created by huanghaijie on 2018/8/10.
+ * Created by wenxin on 2018/12/10.
  */
 class TranslateDao : BaseDao(), TranslateDaoContract {
     override fun insertTranslates(data: MutableList<TranslateBean>) {

@@ -5,7 +5,7 @@ import com.hankkin.library.mvp.contract.IBaseViewContract
 import com.hankkin.library.mvp.contract.IPresenterContract
 
 /**
- * Created by huanghaijie on 2018/7/8.
+ * Created by wenxin on 2018/12/8.
  */
 interface ProjectListContact {
     interface IView : IBaseViewContract {
@@ -14,6 +14,6 @@ interface ProjectListContact {
     }
 
     interface IPresenter : IPresenterContract {
-        fun getCateList(page: Int,cid: Int)
+        fun getCateList(page: Int, cid: Int)
     }
 }

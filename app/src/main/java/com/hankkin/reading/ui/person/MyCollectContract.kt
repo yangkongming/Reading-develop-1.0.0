@@ -4,7 +4,7 @@ import com.hankkin.reading.domain.ArticleBean
 import com.hankkin.library.mvp.contract.IBaseViewContract
 import com.hankkin.library.mvp.contract.IPresenterContract
 
-interface MyCollectContract{
+interface MyCollectContract {
 
     interface IView : IBaseViewContract {
         fun getCollectData(articleBean: ArticleBean)

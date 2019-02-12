@@ -11,18 +11,14 @@ object UserControl {
 
     private var user: UserBean? = null
 
-    init {
-
-    }
-
     fun setCurrentUser(userBean: UserBean) {
         this.user = userBean
         saveUserSp(userBean)
     }
 
     fun getCurrentUser(): UserBean? {
-        if (this.user == null){
-            this.user = SPUtils.getObject(USER,UserBean::class.java) as UserBean
+        if (this.user == null) {
+            this.user = SPUtils.getObject(USER, UserBean::class.java) as UserBean
         }
         return this.user
     }
@@ -38,7 +34,7 @@ object UserControl {
         return false
     }
 
-    fun logout(){
+    fun logout() {
         this.user = null
         SPUtils.clear()
         CookiesManager.clearAllCookies()

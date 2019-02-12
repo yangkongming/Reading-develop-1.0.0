@@ -1,7 +1,7 @@
 package com.hankkin.reading.domain
 
 /**
- * Created by huanghaijie on 2018/7/8.
+ * Created by wenxin on 2018/11/8.
  */
 data class BannerBean(val id: Int,
                       val desc: String,

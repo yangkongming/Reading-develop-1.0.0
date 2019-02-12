@@ -4,8 +4,8 @@ import com.hankkin.reading.domain.TranslateBean
 import com.hankkin.reading.dao.BaseDaoContract
 
 /**
- * @author Hankkin
- * @date 2018/8/10
+ * @author wenxin
+ * @date 2018/12/10
  */
 interface TranslateDaoContract : BaseDaoContract {
 

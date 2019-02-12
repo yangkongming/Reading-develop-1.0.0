@@ -9,14 +9,14 @@ import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
 /**
- * Created by huanghaijie on 2018/5/19.
+ * Created by wenxin on 2018/11/19.
  */
 interface ToolsApi {
 
     @GET("v3/weather/now.json")
-    fun getWeather(@QueryMap params: HashMap<String,Any>) : Observable<Weatherbean>
+    fun getWeather(@QueryMap params: HashMap<String, Any>): Observable<Weatherbean>
 
     @GET("word/search/{word}/?format=json")
-    fun searchWord(@Path("word") word: String) : Observable<BaseResponse<WordBean>>
+    fun searchWord(@Path("word") word: String): Observable<BaseResponse<WordBean>>
 
 }

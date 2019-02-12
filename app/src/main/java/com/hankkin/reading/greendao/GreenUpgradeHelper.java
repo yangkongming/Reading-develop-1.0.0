@@ -19,14 +19,14 @@ public class GreenUpgradeHelper {
     /**
      * 升级入口
      *
-     * @param db db
+     * @param db         db
      * @param openHelper 重新建表时需要用上
      */
     public void upgrade(SQLiteDatabase db, SQLiteOpenHelper openHelper) {
         List<String> tables = queryAllTables(db);
 
         for (String tableName : tables) {
-            if ("android_metadata".equals(tableName)||"sqlite_sequence".equals(tableName)) {//表的元数据，过滤
+            if ("android_metadata".equals(tableName) || "sqlite_sequence".equals(tableName)) {//表的元数据，过滤
                 continue;
             }
             String tempTableName = tableName + "_Temp";

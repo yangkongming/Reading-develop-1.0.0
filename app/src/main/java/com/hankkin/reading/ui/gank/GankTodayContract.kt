@@ -5,10 +5,10 @@ import com.hankkin.library.mvp.contract.IPresenterContract
 import com.hankkin.reading.domain.GankToadyBean
 
 /**
- * Created by Hankkin on 2018/11/8.
+ * Created by wenxin on 2018/1/8.
  */
 interface GankTodayContract {
-    interface IView : IBaseViewContract{
+    interface IView : IBaseViewContract {
         fun setGanks(gankBean: GankToadyBean?)
     }
 

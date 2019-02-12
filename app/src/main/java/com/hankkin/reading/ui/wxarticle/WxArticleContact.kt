@@ -5,9 +5,9 @@ import com.hankkin.library.mvp.contract.IPresenterContract
 import com.hankkin.reading.domain.WxArticleBean
 
 /**
- * Created by huanghaijie on 2018/7/8.
+ * Created by wenxin on 2018/12/8.
  */
-interface WxArticleContact{
+interface WxArticleContact {
     interface IView : IBaseViewContract {
         fun setTabs(data: MutableList<WxArticleBean>)
     }

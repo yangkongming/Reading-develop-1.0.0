@@ -13,7 +13,7 @@ import com.kekstudio.dachshundtablayout.indicators.PointMoveIndicator
 import kotlinx.android.synthetic.main.fragment_hot.*
 
 /**
- * Created by huanghaijie on 2018/5/15.
+ * Created by wenxin on 2018/1/15.
  */
 class HotFragment : BaseMvpFragment<HotPresenter>(), HotContact.IView {
 

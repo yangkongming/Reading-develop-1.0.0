@@ -6,18 +6,18 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 /**
- * Created by huanghaijie on 2018/7/8.
+ * Created by wenxin on 2018/12/8.
  */
-class ProjectListPresenter : RxLifePresenter<ProjectListContact.IView>(), ProjectListContact.IPresenter{
+class ProjectListPresenter : RxLifePresenter<ProjectListContact.IView>(), ProjectListContact.IPresenter {
 
-    override fun getCateList(page: Int,cid: Int) {
+    override fun getCateList(page: Int, cid: Int) {
         HttpClientUtils.Builder.getCommonHttp()
-                .getArticleCid(page,cid)
+                .getArticleCid(page, cid)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribeNx ({
+                .subscribeNx({
                     getMvpView().setCateList(it.data)
-                },{
+                }, {
                     getMvpView().setFail()
                 }).bindRxLifeEx(RxLife.ON_DESTROY)
     }

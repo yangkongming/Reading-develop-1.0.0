@@ -1,7 +1,7 @@
 package com.hankkin.reading.domain
 
 /**
- * Created by huanghaijie on 2018/6/11.
+ * Created by wenxin on 2018/12/11.
  */
 data class UserInfoBean(val uid: Int,
                         val name: String,

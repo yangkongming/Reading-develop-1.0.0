@@ -11,7 +11,7 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 
 /**
- * Created by huanghaijie on 2018/8/1.
+ * Created by wenxin on 2018/11/1.
  */
 
 public class RxBusTools {
@@ -59,6 +59,7 @@ public class RxBusTools {
 
     /**
      * 取消订阅
+     *
      * @param disposable
      */
     public void unregister(Disposable disposable) {

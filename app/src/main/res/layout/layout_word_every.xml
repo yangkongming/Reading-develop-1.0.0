@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="@dimen/dp_10"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dp_10">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -13,8 +13,8 @@
             android:id="@+id/view_small_line"
             android:layout_width="5dp"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/tv_word_every"
             android:layout_alignTop="@+id/tv_word_every"
+            android:layout_alignBottom="@+id/tv_word_every"
             android:background="@drawable/shape_line_small" />
 
         <TextView

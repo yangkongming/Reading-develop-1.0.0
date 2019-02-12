@@ -7,6 +7,7 @@ import org.greenrobot.greendao.annotation.ToMany;
 
 import java.io.Serializable;
 import java.util.List;
+
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.DaoException;
 import org.greenrobot.greendao.annotation.ToOne;
@@ -14,11 +15,12 @@ import org.greenrobot.greendao.annotation.ToOne;
 import com.hankkin.reading.greendao.DaoSession;
 import com.hankkin.reading.greendao.TranslateBeanDao;
 import com.hankkin.reading.greendao.WordNoteBeanDao;
+
 import org.greenrobot.greendao.annotation.NotNull;
 
 /**
- * @author Hankkin
- * @date 2018/8/12
+ * @author wenxin
+ * @date 2018/12/12
  */
 @Entity
 public class WordNoteBean implements Serializable {
@@ -29,28 +31,37 @@ public class WordNoteBean implements Serializable {
     private TranslateBean translateBean;
     @Property(nameInDb = "isEmphasis")
     private boolean isEmphasis;
-    /** Used to resolve relations */
+    /**
+     * Used to resolve relations
+     */
     @Generated(hash = 2040040024)
     private transient DaoSession daoSession;
-    /** Used for active entity operations. */
+    /**
+     * Used for active entity operations.
+     */
     @Generated(hash = 2001773151)
     private transient WordNoteBeanDao myDao;
     @Generated(hash = 1506017723)
     private transient Long translateBean__resolvedKey;
+
     @Generated(hash = 228743069)
     public WordNoteBean(long id, boolean isEmphasis) {
         this.id = id;
         this.isEmphasis = isEmphasis;
     }
+
     @Generated(hash = 1122185869)
     public WordNoteBean() {
     }
+
     public long getId() {
         return this.id;
     }
+
     public void setId(long id) {
         this.id = id;
     }
+
     /**
      * Convenient call for {@link org.greenrobot.greendao.AbstractDao#delete(Object)}.
      * Entity must attached to an entity context.
@@ -62,6 +73,7 @@ public class WordNoteBean implements Serializable {
         }
         myDao.delete(this);
     }
+
     /**
      * Convenient call for {@link org.greenrobot.greendao.AbstractDao#refresh(Object)}.
      * Entity must attached to an entity context.
@@ -73,6 +85,7 @@ public class WordNoteBean implements Serializable {
         }
         myDao.refresh(this);
     }
+
     /**
      * Convenient call for {@link org.greenrobot.greendao.AbstractDao#update(Object)}.
      * Entity must attached to an entity context.
@@ -84,13 +97,19 @@ public class WordNoteBean implements Serializable {
         }
         myDao.update(this);
     }
-    /** called by internal mechanisms, do not call yourself. */
+
+    /**
+     * called by internal mechanisms, do not call yourself.
+     */
     @Generated(hash = 1986712089)
     public void __setDaoSession(DaoSession daoSession) {
         this.daoSession = daoSession;
         myDao = daoSession != null ? daoSession.getWordNoteBeanDao() : null;
     }
-    /** To-one relationship, resolved on first access. */
+
+    /**
+     * To-one relationship, resolved on first access.
+     */
     @Generated(hash = 990025581)
     public TranslateBean getTranslateBean() {
         long __key = this.id;
@@ -109,11 +128,13 @@ public class WordNoteBean implements Serializable {
         return translateBean;
     }
 
-    public TranslateBean getMyTranslate(){
+    public TranslateBean getMyTranslate() {
         return translateBean;
     }
 
-    /** called by internal mechanisms, do not call yourself. */
+    /**
+     * called by internal mechanisms, do not call yourself.
+     */
     @Generated(hash = 1759489943)
     public void setTranslateBean(@NotNull TranslateBean translateBean) {
         if (translateBean == null) {
@@ -126,9 +147,11 @@ public class WordNoteBean implements Serializable {
             translateBean__resolvedKey = id;
         }
     }
+
     public boolean getIsEmphasis() {
         return this.isEmphasis;
     }
+
     public void setIsEmphasis(boolean isEmphasis) {
         this.isEmphasis = isEmphasis;
     }

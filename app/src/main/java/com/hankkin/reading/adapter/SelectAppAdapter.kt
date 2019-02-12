@@ -11,15 +11,15 @@ import com.hankkin.reading.adapter.base.OnItemClickListener
 import com.hankkin.reading.domain.AppInfo
 
 /**
- * Created by ${Hankkin} on 2018/10/15.
+ * Created by wenxin on 2018/12/15.
  */
-class SelectAppAdapter: BaseRecyclerViewAdapter<AppInfo>(){
+class SelectAppAdapter : BaseRecyclerViewAdapter<AppInfo>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(parent, R.layout.adapter_select_app,listener)
+        return ViewHolder(parent, R.layout.adapter_select_app, listener)
     }
 
-    class ViewHolder(parent: ViewGroup?, layoutId: Int,val onItemClickListener: OnItemClickListener<AppInfo>) : BaseRecyclerViewHolder<AppInfo>(parent, layoutId) {
+    class ViewHolder(parent: ViewGroup?, layoutId: Int, val onItemClickListener: OnItemClickListener<AppInfo>) : BaseRecyclerViewHolder<AppInfo>(parent, layoutId) {
 
         val tvText by lazy { itemView.findViewById<TextView>(R.id.tv_adapter_select_app_name) }
         val ivIcon by lazy { itemView.findViewById<ImageView>(R.id.iv_adapter_select_app_icon) }
@@ -30,7 +30,7 @@ class SelectAppAdapter: BaseRecyclerViewAdapter<AppInfo>(){
                 tvText.text = name
                 ivIcon.setImageDrawable(icon)
                 llRoot.setOnClickListener {
-                    onItemClickListener.onClick(bean,position)
+                    onItemClickListener.onClick(bean, position)
                 }
             }
         }

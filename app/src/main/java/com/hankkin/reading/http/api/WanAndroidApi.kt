@@ -7,7 +7,7 @@ import retrofit2.http.*
 import java.util.*
 
 /**
- * Created by huanghaijie on 2018/7/6.
+ * Created by wenxin on 2018/11/6.
  */
 interface WanAndroidApi {
 
@@ -135,6 +135,6 @@ interface WanAndroidApi {
      * 公众号历史数据
      */
     @GET("wxarticle/list/{id}/{page}/json")
-    fun getWxList(@Path("id") id: Int,@Path("page") page: Int): Observable<BaseResponse<WxArticleListBean>>
+    fun getWxList(@Path("id") id: Int, @Path("page") page: Int): Observable<BaseResponse<WxArticleListBean>>
 
 }

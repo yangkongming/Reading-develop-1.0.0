@@ -1,19 +1,3 @@
-/*
- * Copyright (C) 2016 Bilibili
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *         http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.hankkin.reading.utils;
 
 import android.content.Context;
@@ -23,8 +7,8 @@ import com.hankkin.reading.R;
 
 
 /**
- * @author xyczero
- * @time 16/5/2
+ * @author wenxin
+ * @time 18/11/2
  */
 public class ThemeHelper {
     private static final String CURRENT_THEME = "theme_current";
@@ -45,8 +29,7 @@ public class ThemeHelper {
     public static final int COLOR_GAODUAN = 0x14;
     public static final int COLOR_LIANGBAI = 0x15;
 
-    public static String[] themeList = {"yima","kuan","bili","yidi","shuiya","yiteng","jilao","zhihu","gutong","didiao","gaoduan","aping","liangbai","anluolan","xinghong"}
-    ;
+    public static String[] themeList = {"yima", "kuan", "bili", "yidi", "shuiya", "yiteng", "jilao", "zhihu", "gutong", "didiao", "gaoduan", "aping", "liangbai", "anluolan", "xinghong"};
 
     public static SharedPreferences getSharePreference(Context context) {
         return context.getSharedPreferences("multiple_theme", Context.MODE_PRIVATE);
@@ -55,7 +38,7 @@ public class ThemeHelper {
     public static void setTheme(Context context, int themeId) {
         getSharePreference(context).edit()
                 .putInt(CURRENT_THEME, themeId)
-                .commit();
+                .apply();
     }
 
     public static int getTheme(Context context) {
@@ -106,7 +89,7 @@ public class ThemeHelper {
         String str = "";
         switch (getTheme(context)) {
             case COLOR_YIMA:
-                str =  "yima";
+                str = "yima";
                 break;
             case COLOR_KUAN:
                 str = "kuan";

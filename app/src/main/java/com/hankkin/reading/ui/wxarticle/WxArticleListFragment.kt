@@ -13,7 +13,7 @@ import com.hankkin.reading.utils.ViewHelper
 import kotlinx.android.synthetic.main.fragment_wxarticle_list.*
 
 /**
- * Created by huanghaijie on 2018/5/15.
+ * Created by wenxin on 2018/12/15.
  */
 class WxArticleListFragment : BaseMvpFragment<WxArticleListPresenter>(), WxArticleListContact.IView, SwipeRefreshLayout.OnRefreshListener {
 
@@ -39,7 +39,7 @@ class WxArticleListFragment : BaseMvpFragment<WxArticleListPresenter>(), WxArtic
     override fun initData() {
         mIndex = arguments?.getInt("index")
         wxArticleListBean = (arguments?.getSerializable("bean")) as WxArticleBean
-        getPresenter().getWxArticleList(wxArticleListBean.id,mPage)
+        getPresenter().getWxArticleList(wxArticleListBean.id, mPage)
     }
 
     private fun initXrv() {
@@ -51,7 +51,7 @@ class WxArticleListFragment : BaseMvpFragment<WxArticleListPresenter>(), WxArtic
             adapter = mAdapter
             setLoadingListener(object : XRecyclerView.LoadingListener {
                 override fun onLoadMore() {
-                    getPresenter().getWxArticleList(wxArticleListBean.id,mPage)
+                    getPresenter().getWxArticleList(wxArticleListBean.id, mPage)
                 }
 
                 override fun onRefresh() {
@@ -62,7 +62,7 @@ class WxArticleListFragment : BaseMvpFragment<WxArticleListPresenter>(), WxArtic
     }
 
     override fun setWxArticles(data: WxArticleListBean) {
-        mPage = data.curPage +1
+        mPage = data.curPage + 1
         if (mPage < 2) {
             xrv_wx_list.scrollToPosition(0)
             mAdapter.clear()
@@ -84,11 +84,11 @@ class WxArticleListFragment : BaseMvpFragment<WxArticleListPresenter>(), WxArtic
         xrv_wx_list.reset()
         refresh_wx_list.isRefreshing = true
         mPage = 0
-        getPresenter().getWxArticleList(wxArticleListBean.id,mPage)
+        getPresenter().getWxArticleList(wxArticleListBean.id, mPage)
     }
 
     override fun onEvent(event: EventMap.BaseEvent) {
-        if (event is EventMap.XrvScollToPosEvent && event.index == mIndex){
+        if (event is EventMap.XrvScollToPosEvent && event.index == mIndex) {
             xrv_wx_list.smoothScrollToPosition(0)
         }
     }

@@ -5,9 +5,9 @@ import com.hankkin.library.mvp.contract.IPresenterContract
 import com.hankkin.library.mvp.contract.IRefresh
 
 /**
- * Created by huanghaijie on 2018/5/16.
+ * Created by wenxin on 2018/1/16.
  */
-interface PersonInfoContract{
+interface PersonInfoContract {
 
     interface IView : IRefresh {
         fun setInfo(userInfoBean: UserInfoBean)

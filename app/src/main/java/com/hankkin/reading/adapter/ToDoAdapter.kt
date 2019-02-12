@@ -17,8 +17,8 @@ import com.hankkin.reading.ui.todo.AddToDoActivity
 import com.hankkin.reading.utils.ViewHelper
 
 /**
- * @author Hankkin
- * @date 2018/8/26
+ * @author wenxin
+ * @date 2018/12/26
  */
 class ToDoAdapter : BaseRecyclerViewAdapter<ListBean>() {
 

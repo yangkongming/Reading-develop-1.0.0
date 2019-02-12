@@ -5,7 +5,7 @@ import com.hankkin.library.mvp.contract.IBaseLoading
 import com.hankkin.library.mvp.contract.IPresenterContract
 
 /**
- * Created by huanghaijie on 2018/5/16.
+ * Created by wenxin on 2018/11/16.
  */
 interface ToolsContract{
 

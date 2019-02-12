@@ -1,7 +1,7 @@
 package com.hankkin.reading.dao
 
 /**
- * Created by huanghaijie on 2018/7/25.
+ * Created by wenxin on 2018/11/25.
  */
 interface BaseDaoContract {
 }

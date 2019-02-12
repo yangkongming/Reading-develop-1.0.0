@@ -36,9 +36,9 @@ class AddAcountActivity : BaseActivity() {
     }
 
     companion object {
-        fun intentTo(context: Context, id: Long){
-            val intent = Intent(context,AddAcountActivity::class.java)
-            intent.putExtra("id",id)
+        fun intentTo(context: Context, id: Long) {
+            val intent = Intent(context, AddAcountActivity::class.java)
+            intent.putExtra("id", id)
             context.startActivity(intent)
         }
     }
@@ -65,23 +65,23 @@ class AddAcountActivity : BaseActivity() {
         fab_add_acount.setOnClickListener {
             checkMsg()
         }
-        tv_add_account_name.setOnClickListener { startActivity(Intent(this,SelectAppActivity::class.java)) }
+        tv_add_account_name.setOnClickListener { startActivity(Intent(this, SelectAppActivity::class.java)) }
     }
 
     override fun initData() {
-        accountId = intent.getLongExtra("id",0L)
-        if (accountId != 0L){
+        accountId = intent.getLongExtra("id", 0L)
+        if (accountId != 0L) {
             accountBean = DaoFactory.getProtocol(AccountDaoContract::class.java).queryAccountById(accountId!!)
             setAccount()
         }
     }
 
-    private fun setAccount(){
+    private fun setAccount() {
         accountBean?.apply {
             tv_add_account_name.text = name
             et_add_account_number.setText(number)
             et_add_account_number.setSelection(number.length)
-            et_add_account_password.setText(EncryptUtils.HloveyRC4(password.toString(),Constant.COMMON.DEFAULT_LOCK_KEY))
+            et_add_account_password.setText(EncryptUtils.HloveyRC4(password.toString(), Constant.COMMON.DEFAULT_LOCK_KEY))
             et_add_account_password.setSelection(et_add_account_password.text.length)
             et_add_account_bz.setText(beizhu)
             et_add_account_bz.setSelection(beizhu.length)
@@ -90,7 +90,7 @@ class AddAcountActivity : BaseActivity() {
         }
     }
 
-    private fun setCateImg(text: String){
+    private fun setCateImg(text: String) {
         iv_add_acount_cate.setImageResource(when (text) {
             Constant.ACCOUNT_CATE.BANK -> R.mipmap.icon_account_bank
             Constant.ACCOUNT_CATE.SHOP -> R.mipmap.icon_account_shop
@@ -128,16 +128,15 @@ class AddAcountActivity : BaseActivity() {
     private fun saveAccount() {
         var accountBean = AccountBean()
         accountBean.cate = tv_add_account_cate.text.toString()
-        accountBean.id = if(accountId != 0L) this.accountId!! else accountBean.hashCode().toLong()
+        accountBean.id = if (accountId != 0L) this.accountId!! else accountBean.hashCode().toLong()
         accountBean.name = tv_add_account_name.text.toString()
         accountBean.number = et_add_account_number.text.toString()
-        accountBean.password = EncryptUtils.HloveyRC4(et_add_account_password.text.toString(),Constant.COMMON.DEFAULT_LOCK_KEY)
+        accountBean.password = EncryptUtils.HloveyRC4(et_add_account_password.text.toString(), Constant.COMMON.DEFAULT_LOCK_KEY)
         accountBean.createAt = System.currentTimeMillis()
         accountBean.beizhu = et_add_account_bz.text.toString()
-        if (accountId != 0L){
+        if (accountId != 0L) {
             DaoFactory.getProtocol(AccountDaoContract::class.java).updateAccountById(accountBean)
-        }
-        else{
+        } else {
             DaoFactory.getProtocol(AccountDaoContract::class.java).saveAccount(accountBean)
         }
         ToastUtils.showSuccess(this, resources.getString(R.string.account_add_success))
@@ -146,7 +145,7 @@ class AddAcountActivity : BaseActivity() {
     }
 
     override fun onEvent(event: EventMap.BaseEvent) {
-        if (event is EventMap.SelectAppEvent){
+        if (event is EventMap.SelectAppEvent) {
             tv_add_account_name.text = event.bean.name
             iv_add_acount_icon.setImageDrawable(event.bean.icon)
         }

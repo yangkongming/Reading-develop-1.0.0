@@ -6,13 +6,13 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 /**
- * Created by huanghaijie on 2018/7/8.
+ * Created by wenxin on 2018/12/8.
  */
 class WxArticleListPresenter : RxLifePresenter<WxArticleListContact.IView>(), WxArticleListContact.IPresenter {
 
     override fun getWxArticleList(id: Int, page: Int) {
         HttpClientUtils.Builder.getCommonHttp()
-                .getWxList(id,page)
+                .getWxList(id, page)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeNx({

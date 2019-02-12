@@ -1,11 +1,7 @@
 package com.hankkin.reading.ui.gank
 
-import android.os.Handler
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
-import android.view.View
-import com.hankkin.library.fuct.common.DoubleClickListener
-import com.hankkin.library.utils.ToastUtils
 import com.hankkin.reading.R
 import com.hankkin.reading.adapter.GankAdapter
 import com.hankkin.reading.adapter.base.XRecyclerView
@@ -15,7 +11,7 @@ import com.hankkin.reading.utils.ViewHelper
 import kotlinx.android.synthetic.main.fragment_gank_item.*
 
 /**
- * Created by Hankkin on 2018/11/8.
+ * Created by wenxin on 2018/1/8.
  */
 class GankAndroidFragment : BaseMvpFragment<GankPresenter>(), GankContract.IView, SwipeRefreshLayout.OnRefreshListener {
     private val GANK_CATE = "Android"

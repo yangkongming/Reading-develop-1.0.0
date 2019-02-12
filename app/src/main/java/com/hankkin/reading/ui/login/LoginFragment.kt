@@ -16,7 +16,7 @@ import com.hankkin.library.utils.RxBusTools
 import kotlinx.android.synthetic.main.fragment_login.*
 
 /**
- * Created by huanghaijie on 2018/5/15.
+ * Created by wenxin on 2018/11/15.
  */
 class LoginFragment : BaseMvpFragment<LoginContract.IPresenter>(), LoginContract.IView, KeyEditText.KeyPreImeListener {
 
@@ -33,7 +33,9 @@ class LoginFragment : BaseMvpFragment<LoginContract.IPresenter>(), LoginContract
     }
 
     override fun initData() {
-        tv_login_go_reg.setOnClickListener { RxBusTools.getDefault().post(EventMap.LoginSetTabEvent(1)) }
+        tv_login_go_reg.setOnClickListener {
+            RxBusTools.getDefault().post(EventMap.LoginSetTabEvent(1))
+        }
         login_btn.setOnClickListener {
             var map = HashMap<String, Any>()
             map.put(RegisterPresenter.NAME, et_login_name.text.toString())

@@ -1,7 +1,7 @@
 package com.hankkin.reading.domain
 
 /**
- * Created by huanghaijie on 2018/7/14.
+ * Created by wenxin on 2018/11/14.
  */
 data class CollectArticleBean(val curPage: Int,
                               val datas: MutableList<CollectArticleBean>,

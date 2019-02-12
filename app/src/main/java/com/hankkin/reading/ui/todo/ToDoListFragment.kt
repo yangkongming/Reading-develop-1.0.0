@@ -20,8 +20,8 @@ import com.hankkin.reading.utils.ViewHelper
 import kotlinx.android.synthetic.main.fragment_todo_list.*
 
 /**
- * @author Hankkin
- * @date 2018/8/26
+ * @author wenxin
+ * @date 2018/12/26
  */
 class ToDoListFragment : BaseMvpFragment<ToDoContract.IPresenter>(), ToDoContract.IView, SwipeRefreshLayout.OnRefreshListener {
 
@@ -112,8 +112,8 @@ class ToDoListFragment : BaseMvpFragment<ToDoContract.IPresenter>(), ToDoContrac
                 val headerDone = layoutInflater.inflate(R.layout.layout_header_done, null)
                         .apply {
                             findViewById<TextView>(R.id.tv_done_more).setOnClickListener {
-                                Intent(activity,MoreToDoActivity::class.java).apply {
-                                    putExtra("cate",mIndex)
+                                Intent(activity, MoreToDoActivity::class.java).apply {
+                                    putExtra("cate", mIndex)
                                     startActivity(this)
                                 }
                             }
@@ -122,7 +122,7 @@ class ToDoListFragment : BaseMvpFragment<ToDoContract.IPresenter>(), ToDoContrac
             }
             mDoneAdapter.apply {
                 clear()
-                addAll(data.doneList[data.doneList.size-1].todoList)
+                addAll(data.doneList[data.doneList.size - 1].todoList)
                 notifyDataSetChanged()
             }
         }
@@ -165,8 +165,8 @@ class ToDoListFragment : BaseMvpFragment<ToDoContract.IPresenter>(), ToDoContrac
             getPresenter().deleteTodo(event.id)
         } else if (event is EventMap.CompleteToDoEvent) {
             getPresenter().completeTo(event.bean.id)
-        }else if (event is EventMap.ChangeThemeEvent){
-            ViewHelper.changeRefreshColor(refresh_todo_list,context)
+        } else if (event is EventMap.ChangeThemeEvent) {
+            ViewHelper.changeRefreshColor(refresh_todo_list, context)
         }
     }
 

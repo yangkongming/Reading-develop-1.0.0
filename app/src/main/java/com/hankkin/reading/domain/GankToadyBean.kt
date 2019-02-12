@@ -3,10 +3,10 @@ package com.hankkin.reading.domain
 import java.io.Serializable
 
 /**
- * Created by Hankkin on 2018/11/8.
+ * Created by wenxin on 2018/11/8.
  */
 data class GankToadyBean(val error: Boolean,
-                    val results: TodayBean?) : Serializable
+                         val results: TodayBean?) : Serializable
 
 data class TodayBean(val Android: MutableList<ResultBean>?,
                      val App: MutableList<ResultBean>?,

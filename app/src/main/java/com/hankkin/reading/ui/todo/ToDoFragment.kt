@@ -13,8 +13,8 @@ import com.kekstudio.dachshundtablayout.indicators.DachshundIndicator
 import kotlinx.android.synthetic.main.fragment_todo.*
 
 /**
- * @author Hankkin
- * @date 2018/8/26
+ * @author wenxin
+ * @date 2018/12/26
  */
 class ToDoFragment : BaseFragment() {
 
@@ -27,7 +27,9 @@ class ToDoFragment : BaseFragment() {
         iv_todo_display.setOnClickListener {
             startActivity(Intent(context, if (UserControl.isLogin()) {
                 AddToDoActivity::class.java
-            } else { LoginActivity::class.java }))
+            } else {
+                LoginActivity::class.java
+            }))
         }
         val temp = mutableListOf<String>("Only One", "Work", "Study", "Life")
         val adapter = PageAdapter(childFragmentManager, temp)

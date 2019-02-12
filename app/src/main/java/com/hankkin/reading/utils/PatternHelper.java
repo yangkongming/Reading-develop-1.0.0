@@ -115,7 +115,7 @@ public class PatternHelper {
 
     private void saveToStorage(String gesturePwd) {
         final String encryptPwd = SecurityUtils.encrypt(gesturePwd);
-        SPUtils.INSTANCE.put(GESTURE_PWD_KEY,encryptPwd);
+        SPUtils.INSTANCE.put(GESTURE_PWD_KEY, encryptPwd);
     }
 
     private String getFromStorage() {

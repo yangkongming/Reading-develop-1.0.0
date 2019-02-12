@@ -15,7 +15,7 @@ class ToDoActivity : BaseActivity() {
 
     override fun initData() {
         supportFragmentManager.beginTransaction()
-                .add(R.id.ll_todo,ToDoFragment())
+                .add(R.id.ll_todo, ToDoFragment())
                 .commit()
 
     }

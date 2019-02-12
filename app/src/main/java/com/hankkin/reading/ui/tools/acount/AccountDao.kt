@@ -7,10 +7,10 @@ import com.hankkin.reading.greendao.AccountBeanDao
 import com.hankkin.reading.dao.BaseDao
 
 /**
- * @author Hankkin
- * @date 2018/8/14
+ * @author wenxin
+ * @date 2018/12/14
  */
-class AccountDao : BaseDao(),AccountDaoContract{
+class AccountDao : BaseDao(), AccountDaoContract {
     override fun insertAccounts(data: MutableList<AccountBean>) {
         updateSPTime()
         daoSession.accountBeanDao.insertOrReplaceInTx(data)
@@ -52,8 +52,8 @@ class AccountDao : BaseDao(),AccountDaoContract{
             daoSession.accountBeanDao.queryBuilder().orderDesc(AccountBeanDao.Properties.CreateAt).list()
 
 
-    private fun updateSPTime(){
-        SPUtils.put(Constant.SP_KEY.DB_UPDATE_TIME,System.currentTimeMillis())
+    private fun updateSPTime() {
+        SPUtils.put(Constant.SP_KEY.DB_UPDATE_TIME, System.currentTimeMillis())
     }
 
 

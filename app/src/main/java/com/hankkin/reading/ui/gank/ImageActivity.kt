@@ -42,16 +42,16 @@ class ImageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_image)
-        MyStatusBarUtil.setColorForSwipeBack(this,resources.getColor(R.color.black))
+        MyStatusBarUtil.setColorForSwipeBack(this, resources.getColor(R.color.black))
         view_pager.adapter = ImagePagerAdapter(imageList)
         view_pager.currentItem = position
-        tv_po.text = "${position+1}/${imageList.size}"
-        view_pager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
+        tv_po.text = "${position + 1}/${imageList.size}"
+        view_pager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {
             }
 
             override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-                tv_po.text = "${position+1}/${imageList.size}"
+                tv_po.text = "${position + 1}/${imageList.size}"
             }
 
             override fun onPageSelected(position: Int) {
@@ -59,7 +59,6 @@ class ImageActivity : AppCompatActivity() {
 
         })
     }
-
 
 
     private inner class ImagePagerAdapter(private val imageList: List<String>) : PagerAdapter() {

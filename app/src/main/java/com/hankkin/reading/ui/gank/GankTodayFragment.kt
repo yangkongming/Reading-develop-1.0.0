@@ -10,7 +10,7 @@ import com.hankkin.reading.utils.ViewHelper
 import kotlinx.android.synthetic.main.fragment_gank_item.*
 
 /**
- * Created by Hankkin on 2018/11/8.
+ * Created by wenxin on 2018/1/8.
  */
 class GankTodayFragment : BaseMvpFragment<GankTodayPresenter>(), GankTodayContract.IView, SwipeRefreshLayout.OnRefreshListener {
 

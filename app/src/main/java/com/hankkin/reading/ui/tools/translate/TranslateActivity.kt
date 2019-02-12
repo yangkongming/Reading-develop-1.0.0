@@ -181,7 +181,7 @@ class TranslateActivity : BaseActivity() {
         LoadingUtils.showLoading(this)
         translator.lookup(key, key.hashCode().toString(), object : TranslateListener {
             override fun onResult(p0: Translate?, p1: String?, p2: String?) {
-                Handler(Looper.getMainLooper()).post({
+                Handler(Looper.getMainLooper()).post {
                     translate = p0
                     var translate = JsonUtils.jsonToObject(p0?.let { JsonUtils.objToJson(it) }!!, TranslateBean::class.java) as TranslateBean
                     translate.id = p2!!.toLong()
@@ -189,7 +189,7 @@ class TranslateActivity : BaseActivity() {
                     setWordLayout(translate)
                     saveHistory(translate)
                     LoadingUtils.hideLoading()
-                })
+                }
             }
 
             override fun onResult(p0: MutableList<Translate>?, p1: MutableList<String>?, p2: MutableList<TranslateErrorCode>?, p3: String?) {
@@ -227,7 +227,7 @@ class TranslateActivity : BaseActivity() {
         }
 
         ll_translate_explains.removeAllViews()
-        if (translate.explains != null){
+        if (translate.explains != null) {
             for (explain in translate.explains) {
                 val tv = layoutInflater.inflate(R.layout.adapter_translate_paraphrases_item, null) as TextView
                 tv.text = explain
@@ -240,7 +240,7 @@ class TranslateActivity : BaseActivity() {
                 val webEx = translate.webExplains.get(0)
                 tv_translate_web.text = webEx.means.toString()
             }
-        }catch (e: DaoException){
+        } catch (e: DaoException) {
             LogUtils.e(e.message)
         }
 

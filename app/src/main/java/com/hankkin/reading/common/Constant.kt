@@ -1,12 +1,11 @@
 package com.hankkin.reading.common
 
 /**
- * Created by huanghaijie on 2018/5/16.
+ * Created by wenxin on 2018/11/16.
  */
 object Constant {
 
-
-    object COMMON{
+    object COMMON {
         const val WEATHER_KEY = "lwfgtgl1hehjy4vd"
         const val DB_NAME = "reading.db"
         const val SP_NAME = "Reading"
@@ -26,25 +25,12 @@ object Constant {
         const val CSDN_TITLE = "CSDN"
     }
 
-
-
-    /**
-     *  HTTP URL
-     * */
-    object ConfigUrl {
-        const val BASE_URL = "http://reading.ccyg.studio/"
-    }
-
-    object WeatherUrl{
-        const val WEATHER_URL = "https://api.seniverse.com/"
-    }
-
-    object ToolsUrl{
+    object ToolsUrl {
         const val Base_URL = "https://fanyi-api.baidu.com/api/trans/vip/translate"
         const val WEATHER_URL = "https://api.seniverse.com/"
     }
 
-    object GankUrl{
+    object GankUrl {
         const val BASE_URL = "https://gank.io/api/"
     }
 
@@ -67,22 +53,7 @@ object Constant {
         const val KEY_TODO = "todo"
     }
 
-
-    object TOOLS {
-        const val ID_KUAIDI = 1
-        const val ID_SAOYISAO = 2
-        const val ID_WORD = 3
-        const val ID_WORD_NOTE = 4
-        const val ID_MOVIE = 5
-        const val ID_MUSIC = 6
-        const val ID_PWD_NOTE = 7
-        const val ID_WEATHER = 8
-        const val ID_NEWS = 9
-        const val ID_JUEJIN = 10
-        const val ID_ABOUT = 11
-    }
-
-    object ACCOUNT_CATE{
+    object ACCOUNT_CATE {
         const val SOCIAL = "社交"
         const val BANK = "银行"
         const val CODE = "技术"
@@ -92,7 +63,7 @@ object Constant {
         const val OTHER = "其他"
     }
 
-    object SP_KEY{
+    object SP_KEY {
         const val LOCK_OPEN = "lock_open"
         const val LOCK_BACKUP_OPEN = "lock_backup_open"
         const val WIFI_IMG = "wifi_img"

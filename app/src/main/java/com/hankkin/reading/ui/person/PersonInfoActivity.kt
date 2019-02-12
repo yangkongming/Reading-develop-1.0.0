@@ -1,7 +1,6 @@
 package com.hankkin.reading.ui.person
 
 import com.afollestad.materialdialogs.MaterialDialog
-import com.bumptech.glide.Glide
 import com.hankkin.library.utils.SPUtils
 import com.hankkin.reading.R
 import com.hankkin.reading.base.BaseMvpActivity

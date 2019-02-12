@@ -20,7 +20,7 @@ import com.hankkin.reading.ui.home.articledetail.CommonWebActivity
 import com.howshea.basemodule.component.viewGroup.NineGridImageLayout
 
 /**
- * Created by Hankkin on 2018/11/6.
+ * Created by wenxin on 2018/11/6.
  */
 class GankAdapter : BaseRecyclerViewAdapter<ResultBean>() {
 
@@ -41,16 +41,16 @@ class GankAdapter : BaseRecyclerViewAdapter<ResultBean>() {
             resultBean.apply {
                 tvAuthor.text = who
                 tvChapter.text = type + "/" + source
-                tvTime.text = publishedAt.substring(0,10).replace("-",".")
+                tvTime.text = publishedAt.substring(0, 10).replace("-", ".")
                 tvTitle.text = desc
-                if ("福利".equals(type)){
+                if ("福利".equals(type)) {
                     images = mutableListOf()
                     images?.add(url)
                 }
                 picLayout.visibility = if (images == null) View.GONE else View.VISIBLE
                 picLayout.run {
                     images?.run {
-                        setData(this,1.0F)
+                        setData(this, 1.0F)
                         onItemClick { v, position ->
                             val intent = ImageActivity.newIntent(context, images!!, position)
                             val options = ActivityOptionsCompat.makeSceneTransitionAnimation(context as Activity, v, ViewCompat.getTransitionName(v))

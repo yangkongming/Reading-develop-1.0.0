@@ -19,13 +19,13 @@ import java.io.File
 import java.io.IOException
 
 /**
- * @author Hankkin
- * @date 2018/8/19
+ * @author wenxin
+ * @date 2018/11/19
  */
 object DBUtils {
 
-    fun deleteData(context: Context){
-        FileUtils.delAllFile(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + AppUtils.getAppName(context) + "/" + "db")
+    fun deleteData(context: Context) {
+        FileUtils.delAllFile(Environment.getExternalStorageDirectory().absolutePath + "/" + AppUtils.getAppName(context) + "/" + "db")
     }
 
     /**
@@ -64,8 +64,7 @@ object DBUtils {
                 time = accountStrTime.substring(accountStrTime.indexOf("<") + 1, accountStrTime.indexOf(">")).toLong()
             }
             return time < SPUtils.getLong(Constant.SP_KEY.DB_UPDATE_TIME)
-        }
-        else{
+        } else {
             return true
         }
         return false
@@ -100,7 +99,7 @@ object DBUtils {
         if (wordNotes != null && wordNotes.isNotEmpty()) {
             val wordNoteData = gson.fromJson<WordNoteBean>(wordNotes, object : TypeToken<MutableList<WordNoteBean>>() {}.type) as MutableList<WordNoteBean>
             var translates = mutableListOf<TranslateBean>()
-            for (w in wordNoteData){
+            for (w in wordNoteData) {
                 translates.add(w.myTranslate)
             }
             DaoFactory.getProtocol(TranslateDaoContract::class.java).insertTranslates(translates)
