@@ -12,8 +12,6 @@ import com.hankkin.reading.domain.CateBean
 import com.hankkin.reading.event.EventMap
 import com.hankkin.reading.ui.home.project.ProjectFragment
 import com.hankkin.reading.utils.ViewHelper
-import kotlinx.android.synthetic.main.fragment_android.*
-import kotlinx.android.synthetic.main.fragment_person.*
 import kotlinx.android.synthetic.main.fragment_project_list.*
 
 /**

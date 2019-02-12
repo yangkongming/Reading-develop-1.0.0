@@ -2,7 +2,6 @@ package com.hankkin.reading.base
 
 import android.app.Activity
 import android.os.Bundle
-import android.view.View
 import com.hankkin.library.base.BaseSwipeBackActivity
 import com.hankkin.library.utils.AppUtils
 import com.hankkin.library.utils.RxBusTools
@@ -17,7 +16,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Consumer
 
 /**
- * Created by huanghaijie on 2018/5/15.
+ * Created by wenxin on 2018/11/15.
  */
 abstract class BaseActivity : BaseSwipeBackActivity() {
 
@@ -44,7 +43,7 @@ abstract class BaseActivity : BaseSwipeBackActivity() {
         initData()
     }
 
-    protected fun initPageLayout(targetView: Any){
+    protected fun initPageLayout(targetView: Any) {
         mPageLayout = PageLayout.Builder(this)
                 .initPage(targetView)
                 .setDefaultEmptyText(resources.getString(R.string.pagelayout_empty))
@@ -57,7 +56,7 @@ abstract class BaseActivity : BaseSwipeBackActivity() {
      * 设置白底黑字
      */
     protected fun setMiuiStatusBar() {
-        MyStatusBarUtil.setColorForSwipeBack(this,resources.getColor(R.color.white),0)
+        MyStatusBarUtil.setColorForSwipeBack(this, resources.getColor(R.color.white), 0)
         StatusBarUtil.setLightMode(this)
     }
 
