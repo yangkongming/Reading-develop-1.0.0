@@ -49,7 +49,7 @@ import java.util.*
 class ToolsFragment : BaseMvpFragment<ToolsContract.IPresenter>(), ToolsContract.IView {
     val REQUEST_CODE_SCAN = 0x1
 
-    private lateinit var mAdapter: PersonListAdapter
+    private var mAdapter: PersonListAdapter? = null
 
     private var mWords: MutableList<WordNoteBean>? = null
 
@@ -119,13 +119,13 @@ class ToolsFragment : BaseMvpFragment<ToolsContract.IPresenter>(), ToolsContract
     private fun setSetting() {
         mAdapter = PersonListAdapter()
         mAdapter.apply {
-            data.add(PersonListBean(R.mipmap.icon_person_star, resources.getString(R.string.person_follow)))
-            data.add(PersonListBean(R.mipmap.icon_person_list_theme, resources.getString(R.string.person_theme)))
-            data.add(PersonListBean(R.mipmap.icon_person_db, resources.getString(R.string.setting_db)))
-            data.add(PersonListBean(R.mipmap.icon_person_set_list, resources.getString(R.string.setting)))
+            this?.data?.add(PersonListBean(R.mipmap.icon_person_star, resources.getString(R.string.person_follow)))
+            this?.data?.add(PersonListBean(R.mipmap.icon_person_list_theme, resources.getString(R.string.person_theme)))
+            this?.data?.add(PersonListBean(R.mipmap.icon_person_db, resources.getString(R.string.setting_db)))
+            this?.data?.add(PersonListBean(R.mipmap.icon_person_set_list, resources.getString(R.string.setting)))
             if (UserControl.isLogin()) {
                 tv_tools_title.text = "Hi,${UserControl.getCurrentUser()?.username}"
-                data.add(PersonListBean(R.mipmap.icon_person_set_exit, resources.getString(R.string.person_info_logout)))
+                this?.data?.add(PersonListBean(R.mipmap.icon_person_set_exit, resources.getString(R.string.person_info_logout)))
             } else {
                 tv_tools_title.text = "Hi,小猿猿"
             }
@@ -184,15 +184,17 @@ class ToolsFragment : BaseMvpFragment<ToolsContract.IPresenter>(), ToolsContract
         if (event is EventMap.UpdateEveryEvent) {
             setEveryWord()
         } else if (event is EventMap.LoginEvent) {
+            mAdapter = PersonListAdapter()
             mAdapter.apply {
-                add(PersonListBean(R.mipmap.icon_person_set_exit, resources.getString(R.string.person_info_logout)))
-                mAdapter.notifyDataSetChanged()
+                this?.add(PersonListBean(R.mipmap.icon_person_set_exit, resources.getString(R.string.person_info_logout)))
+                mAdapter!!.notifyDataSetChanged()
                 if (UserControl.isLogin()) {
                     tv_tools_title.text = "Hi,${UserControl.getCurrentUser()?.username}"
                 } else {
                     tv_tools_title.text = "Hi,小猿猿"
                 }
             }
+
         } else if (event is EventMap.PersonClickEvent) {
             when (event.index) {
                 0 -> startActivity(
@@ -210,8 +212,8 @@ class ToolsFragment : BaseMvpFragment<ToolsContract.IPresenter>(), ToolsContract
                             MaterialDialog.SingleButtonCallback { dialog, which ->
                                 UserControl.logout()
                                 mAdapter.apply {
-                                    remove(data.size - 1)
-                                    notifyDataSetChanged()
+                                    this?.remove(data.size - 1)
+                                    this?.notifyDataSetChanged()
                                 }
                                 ToastUtils.showInfo(context!!, "已注销登录!")
                                 tv_tools_title.text = "Hi,小菜鸟"

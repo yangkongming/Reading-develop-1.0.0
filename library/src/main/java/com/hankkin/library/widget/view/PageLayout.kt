@@ -13,16 +13,17 @@ import android.widget.TextView
 import com.hankkin.library.R
 
 /**
- * Created by huanghaijie on 2018/9/5.
+ * Created by wenxin on 2018/11/5.
  */
 class PageLayout : FrameLayout {
 
-    enum class State{
+    enum class State {
         EMPTY_TYPE,
         LOADING_TYPE,
         ERROR_TYPE,
         CONTENT_TYPE
     }
+
     private var mLoading: View? = null
     private var mEmpty: View? = null
     private var mError: View? = null
@@ -33,7 +34,7 @@ class PageLayout : FrameLayout {
     private var mOnRetryClickListener: OnRetryClickListener? = null
 
 
-    fun getOnRetryListener(): OnRetryClickListener?{
+    fun getOnRetryListener(): OnRetryClickListener? {
         return mOnRetryClickListener
     }
 
@@ -59,7 +60,6 @@ class PageLayout : FrameLayout {
         mError?.visibility = if (type == State.ERROR_TYPE) View.VISIBLE else View.GONE
         mEmpty?.visibility = if (type == State.EMPTY_TYPE) View.VISIBLE else View.GONE
     }
-
 
 
     fun showLoading() {
@@ -175,7 +175,7 @@ class PageLayout : FrameLayout {
         }
 
 
-        fun setEmpty(empty: Int,emptyTvId: Int): Builder {
+        fun setEmpty(empty: Int, emptyTvId: Int): Builder {
             mInflater.inflate(empty, null, false).apply {
                 mTvEmpty = findViewById(emptyTvId)
                 mPageLayout.mEmpty = this
@@ -233,17 +233,17 @@ class PageLayout : FrameLayout {
         }
 
         fun setEmptyDrawable(resId: Int): Builder {
-            setTopDrawables(mTvEmpty,resId)
+            setTopDrawables(mTvEmpty, resId)
             return this
         }
 
         fun setErrorDrawable(resId: Int): Builder {
-            setTopDrawables(mTvError,resId)
+            setTopDrawables(mTvError, resId)
             return this
         }
 
         private fun setTopDrawables(textView: TextView, resId: Int) {
-            if (resId == 0){
+            if (resId == 0) {
                 textView.setCompoundDrawables(null, null, null, null)
             }
             val drawable = mContext.resources.getDrawable(resId)
