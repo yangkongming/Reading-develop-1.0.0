@@ -141,7 +141,6 @@ class MainActivity : BaseActivity() {
             findViewById<LinearLayout>(R.id.ll_nav_theme).setOnClickListener(click)
             findViewById<LinearLayout>(R.id.ll_nav_setting).setOnClickListener(click)
             findViewById<LinearLayout>(R.id.ll_nav_exit).setOnClickListener(click)
-            findViewById<LinearLayout>(R.id.ll_nav_about).setOnClickListener(click)
             findViewById<LinearLayout>(R.id.ll_nav_collect).setOnClickListener(click)
             findViewById<LinearLayout>(R.id.ll_nav_wordnote).setOnClickListener(click)
             findViewById<LinearLayout>(R.id.ll_nav_account).setOnClickListener(click)
@@ -251,7 +250,6 @@ class MainActivity : BaseActivity() {
             when (v.id) {
                 R.id.ll_nav_theme -> startActivity(Intent(this@MainActivity, ThemeActivity::class.java))
                 R.id.ll_nav_setting -> startActivity(Intent(this@MainActivity, SettingActivity::class.java))
-                R.id.ll_nav_about -> ViewHelper.showAboutDialog(this@MainActivity)
                 R.id.ll_nav_collect -> {
                     if (!UserControl.isLogin()) {
                         startActivity(Intent(this@MainActivity, LoginActivity::class.java))
