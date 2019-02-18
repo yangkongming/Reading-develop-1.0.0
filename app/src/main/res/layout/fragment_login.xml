@@ -75,26 +75,6 @@
                 android:textSize="@dimen/sp_16"
                 android:textStyle="italic" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_20"
-                android:layout_marginBottom="@dimen/dp_10"
-                android:gravity="center_horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="还没用户？" />
-
-                <com.bilibili.magicasakura.widgets.TintTextView
-                    android:id="@+id/tv_login_go_reg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="立即注册"
-                    android:textColor="@color/theme_color_primary" />
-            </LinearLayout>
-
         </LinearLayout>
 
     </android.support.v7.widget.CardView>

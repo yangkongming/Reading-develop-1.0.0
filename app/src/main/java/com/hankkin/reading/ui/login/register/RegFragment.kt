@@ -26,9 +26,6 @@ class RegFragment : BaseMvpFragment<RegisterContract.IPresenter>(), RegisterCont
     }
 
     override fun initData() {
-        tv_reg_back.setOnClickListener {
-            RxBusTools.getDefault().post(EventMap.LoginSetTabEvent(0))
-        }
         reg_btn.setOnClickListener {
             var map = HashMap<String, String>()
             map.put(RegisterPresenter.NAME, et_reg_email.text.toString())

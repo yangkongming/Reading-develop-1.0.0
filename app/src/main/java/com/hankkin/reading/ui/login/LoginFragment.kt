@@ -33,9 +33,6 @@ class LoginFragment : BaseMvpFragment<LoginContract.IPresenter>(), LoginContract
     }
 
     override fun initData() {
-        tv_login_go_reg.setOnClickListener {
-            RxBusTools.getDefault().post(EventMap.LoginSetTabEvent(1))
-        }
         login_btn.setOnClickListener {
             var map = HashMap<String, Any>()
             map.put(RegisterPresenter.NAME, et_login_name.text.toString())
