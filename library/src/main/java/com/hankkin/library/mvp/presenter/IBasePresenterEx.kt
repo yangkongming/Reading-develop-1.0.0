@@ -7,7 +7,7 @@ import com.hankkin.library.mvp.presenter.IBasePresenter
 import java.lang.IllegalStateException
 
 /**
- * Created by huanghaijie on 2018/5/16.
+ * Created by wenxin on 2018/5/16.
  */
 fun IBasePresenter<*>.getContext(): Context = when {
     getMvpView() is Activity -> getMvpView() as Activity

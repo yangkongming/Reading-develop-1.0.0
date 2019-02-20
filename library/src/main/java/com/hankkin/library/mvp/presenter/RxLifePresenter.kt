@@ -9,7 +9,7 @@ import io.reactivex.Observable
 import io.reactivex.disposables.Disposable
 
 /**
- * Created by huanghaijie on 2018/5/16.
+ * Created by wenxin on 2018/5/16.
  */
 abstract class RxLifePresenter<out V : IBaseViewContract> : IBasePresenter<V>, IPresenterContract {
 

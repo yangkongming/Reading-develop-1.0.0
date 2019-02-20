@@ -11,6 +11,9 @@ import io.reactivex.schedulers.Schedulers
 class ProjectListPresenter : RxLifePresenter<ProjectListContact.IView>(), ProjectListContact.IPresenter {
 
     override fun getCateList(page: Int, cid: Int) {
+        /**
+         *获取分类的文章
+         */
         HttpClientUtils.Builder.getCommonHttp()
                 .getArticleCid(page, cid)
                 .subscribeOn(Schedulers.io())

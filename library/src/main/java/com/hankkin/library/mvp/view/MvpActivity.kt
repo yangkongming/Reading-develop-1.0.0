@@ -7,7 +7,7 @@ import com.hankkin.library.mvp.contract.IBaseViewContract
 import com.hankkin.library.mvp.contract.IPresenterContract
 
 /**
- * Created by huanghaijie on 2018/5/16.
+ * Created by wenxin on 2018/5/16.
  */
  abstract class MvpActivity<out T : IPresenterContract> : BaseSwipeBackActivity() , IBaseView<T>, IBaseViewContract {
 

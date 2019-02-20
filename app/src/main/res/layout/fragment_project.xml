@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     app:ignore="NamespaceTypo">
+
     <com.bilibili.magicasakura.widgets.TintLinearLayout
-        android:background="@color/theme_color_primary"
         android:layout_width="match_parent"
-        android:layout_height="45dp">
+        android:layout_height="45dp"
+        android:background="@color/theme_color_primary">
+
         <com.kekstudio.dachshundtablayout.DachshundTabLayout
             android:id="@+id/tab_project"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_40"
             custom:tabGravity="fill"
+            custom:tabIndicatorColor="@color/white"
             custom:tabMode="fixed"
             custom:tabSelectedTextColor="@color/white"
-            custom:tabTextColor="@color/grey2"
-            custom:tabIndicatorColor="@color/white"
-            />
+            custom:tabTextColor="@color/grey2" />
     </com.bilibili.magicasakura.widgets.TintLinearLayout>
 
 
     <android.support.v4.view.ViewPager
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:id="@+id/vp_project"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </LinearLayout>

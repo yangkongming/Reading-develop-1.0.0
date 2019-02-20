@@ -11,23 +11,18 @@ import java.util.*
  */
 interface WanAndroidApi {
 
-    @GET("openapi/news_list")
-    fun getNewsList(@QueryMap map: HashMap<String, Any>): Observable<MutableList<NewsListBean>>
-
+    /**
+     * 首页banner
+     */
     @GET("banner/json")
     fun getHomeBanner(): Observable<BaseResponse<MutableList<BannerBean>>>
 
     /**
-     * 知识体系下的文章
+     * 首页安卓文章
      */
     @GET("article/list/{page}/json")
     fun getArticle(@Path("page") page: Int): Observable<BaseResponse<ArticleBean>>
 
-    /**
-     * 项目分类
-     */
-    @GET("tree/json")
-    fun getCates(): Observable<BaseResponse<MutableList<CateBean>>>
 
     /**
      * 知识体系下的文章

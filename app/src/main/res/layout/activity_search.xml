@@ -4,113 +4,115 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".ui.home.search.SearchActivity">
 
     <com.bilibili.magicasakura.widgets.TintLinearLayout
-        android:orientation="horizontal"
-        android:padding="@dimen/dp_10"
-        android:background="@color/theme_color_primary"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/theme_color_primary"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_10">
+
         <LinearLayout
-            android:padding="@dimen/dp_10"
-            android:gravity="center_vertical"
-            android:background="@drawable/bg_white_circle"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white_circle"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp_10">
+
             <ImageView
                 android:id="@+id/iv_search_back"
-                android:src="@mipmap/icon_normal_back"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_normal_back" />
+
             <com.bilibili.magicasakura.widgets.TintEditText
                 android:id="@+id/et_search"
-                android:textCursorDrawable="@color/grey"
+                style="@style/normalTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/search_hint"
                 android:imeOptions="actionSearch"
                 android:singleLine="true"
-                android:layout_marginLeft="@dimen/dp_10"
-                android:background="@null"
-                android:layout_weight="1"
-                style="@style/normalTxt"
-                android:hint="@string/search_hint"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:textCursorDrawable="@color/grey" />
         </LinearLayout>
 
 
     </com.bilibili.magicasakura.widgets.TintLinearLayout>
 
-    <RelativeLayout
-        android:padding="@dimen/dp_12"
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_12">
 
         <com.bilibili.magicasakura.widgets.TintView
-            android:layout_alignBottom="@+id/tv_hot_search_title"
-            android:layout_alignTop="@+id/tv_hot_search_title"
             android:id="@+id/view_small_line"
-            android:background="@drawable/shape_line_small"
             android:layout_width="5dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_hot_search_title"
+            android:layout_alignBottom="@+id/tv_hot_search_title"
+            android:background="@drawable/shape_line_small" />
 
         <TextView
-            android:layout_centerVertical="true"
             android:id="@+id/tv_hot_search_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dp_8"
             android:layout_toRightOf="@+id/view_small_line"
-            android:textColor="@color/black"
-            android:textStyle="bold"
             android:text="@string/home_search_hot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
     </RelativeLayout>
+
     <com.google.android.flexbox.FlexboxLayout
-        android:padding="@dimen/dp_10"
         android:id="@+id/flex"
-        app:flexWrap="wrap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10"
         app:alignContent="stretch"
         app:alignItems="stretch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        app:flexWrap="wrap">
 
     </com.google.android.flexbox.FlexboxLayout>
 
-    <RelativeLayout
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/rl_search_history"
-        android:padding="@dimen/dp_12"
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_12">
 
         <com.bilibili.magicasakura.widgets.TintView
-            android:layout_alignBottom="@+id/tv_hot_search_history_title"
-            android:layout_alignTop="@+id/tv_hot_search_history_title"
             android:id="@+id/view_small_line_history"
-            android:background="@drawable/shape_line_small"
             android:layout_width="5dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_hot_search_history_title"
+            android:layout_alignBottom="@+id/tv_hot_search_history_title"
+            android:background="@drawable/shape_line_small" />
 
         <TextView
-            android:layout_centerVertical="true"
             android:id="@+id/tv_hot_search_history_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dp_8"
             android:layout_toRightOf="@+id/view_small_line_history"
-            android:textColor="@color/black"
-            android:textStyle="bold"
             android:text="@string/home_search_hot_history"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_search_history"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

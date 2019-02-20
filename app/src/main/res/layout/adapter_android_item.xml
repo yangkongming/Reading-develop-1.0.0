@@ -4,15 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/dp_10"
-    app:cardElevation="1dp"
-    app:cardCornerRadius="@dimen/dp_6">
+    app:cardCornerRadius="@dimen/dp_6"
+    app:cardElevation="1dp">
 
     <LinearLayout
         android:id="@+id/ll_adapter_android"
-        android:clickable="true"
-        android:background="?attr/selectableItemBackground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
         android:orientation="vertical"
         android:padding="@dimen/dp_10">
 
@@ -21,11 +21,10 @@
             android:layout_height="wrap_content">
 
             <TextView
-                style="@style/greyTxt"
                 android:id="@+id/tv_adapter_android_author"
+                style="@style/greyTxt"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                 />
+                android:layout_height="wrap_content" />
 
             <com.bilibili.magicasakura.widgets.TintTextView
                 android:id="@+id/tv_adapter_android_chapter"
@@ -43,8 +42,8 @@
             android:orientation="horizontal">
 
             <TextView
-                style="@style/normalTxt"
                 android:id="@+id/tv_adapter_android_desc"
+                style="@style/normalTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -71,19 +70,19 @@
             android:layout_marginTop="@dimen/dp_6">
 
             <LinearLayout
-                android:layout_centerVertical="true"
                 android:id="@+id/ll_adapter_android_tags"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:orientation="horizontal">
 
             </LinearLayout>
 
             <com.bilibili.magicasakura.widgets.TintImageView
-                android:layout_centerVertical="true"
                 android:id="@+id/iv_adapter_android_collected"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/dp_16"
                 android:layout_toLeftOf="@+id/tv_adapter_android_time"
                 android:src="@mipmap/icon_collect_normal"
@@ -91,21 +90,21 @@
                 app:imageTint="@color/theme_color_primary" />
 
             <ImageView
-                android:layout_centerVertical="true"
                 android:id="@+id/iv_adapter_android_collect_normal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/dp_16"
                 android:layout_toLeftOf="@+id/tv_adapter_android_time"
                 android:src="@mipmap/icon_collect_normal" />
 
             <TextView
-                android:layout_centerVertical="true"
                 android:id="@+id/tv_adapter_android_time"
+                style="@style/greyTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                style="@style/greyTxt" />
+                android:layout_centerVertical="true" />
         </RelativeLayout>
     </LinearLayout>
 

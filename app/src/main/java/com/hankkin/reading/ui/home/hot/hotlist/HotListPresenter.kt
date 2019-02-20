@@ -10,6 +10,9 @@ import io.reactivex.schedulers.Schedulers
  */
 class HotListPresenter : RxLifePresenter<HotListContact.IView>(), HotListContact.IPresenter {
     override fun queryKey(page: Int, key: String) {
+        /**
+         * 搜索
+         */
         HttpClientUtils.Builder.getCommonHttp()
                 .query(page, key)
                 .subscribeOn(Schedulers.io())
@@ -22,6 +25,9 @@ class HotListPresenter : RxLifePresenter<HotListContact.IView>(), HotListContact
     }
 
     override fun getBannerHttp() {
+        /**
+         *获取banner
+         */
         HttpClientUtils.Builder.getCommonHttp()
                 .getHomeBanner()
                 .subscribeOn(Schedulers.io())

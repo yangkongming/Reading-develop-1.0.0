@@ -9,6 +9,9 @@ import io.reactivex.schedulers.Schedulers
  * Created by wenxin on 2018/12/8.
  */
 class HotPresenter : RxLifePresenter<HotContact.IView>(), HotContact.IPresenter {
+    /**
+     *首页 热门搜索文章
+     */
     override fun getHot() {
         HttpClientUtils.Builder.getCommonHttp()
                 .getHot()

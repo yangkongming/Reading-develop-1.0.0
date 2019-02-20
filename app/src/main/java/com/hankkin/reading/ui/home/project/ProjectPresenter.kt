@@ -10,6 +10,9 @@ import io.reactivex.schedulers.Schedulers
  */
 class ProjectPresenter : RxLifePresenter<ProjectContact.IView>(), ProjectContact.IPresenter {
     override fun getCatesHttp() {
+        /**
+         * 首页项目分类
+         */
         HttpClientUtils.Builder.getCommonHttp()
                 .getProject()
                 .subscribeOn(Schedulers.io())

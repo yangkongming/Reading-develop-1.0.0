@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_common_web"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/ll_common_web"
     tools:context="com.hankkin.reading.ui.home.articledetail.CommonWebActivity">
 
     <com.bilibili.magicasakura.widgets.TintToolbar
@@ -31,7 +31,6 @@
             android:visibility="visible" />
 
     </com.bilibili.magicasakura.widgets.TintToolbar>
-
 
 
 </LinearLayout>
