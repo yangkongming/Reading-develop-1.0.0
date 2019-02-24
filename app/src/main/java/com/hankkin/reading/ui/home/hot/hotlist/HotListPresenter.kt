@@ -9,10 +9,10 @@ import io.reactivex.schedulers.Schedulers
  * Created by wenxin on 2018/1/8.
  */
 class HotListPresenter : RxLifePresenter<HotListContact.IView>(), HotListContact.IPresenter {
+    /**
+     * 搜索
+     */
     override fun queryKey(page: Int, key: String) {
-        /**
-         * 搜索
-         */
         HttpClientUtils.Builder.getCommonHttp()
                 .query(page, key)
                 .subscribeOn(Schedulers.io())
@@ -24,10 +24,10 @@ class HotListPresenter : RxLifePresenter<HotListContact.IView>(), HotListContact
                 }).bindRxLifeEx(RxLife.ON_DESTROY)
     }
 
+    /**
+     *获取banner
+     */
     override fun getBannerHttp() {
-        /**
-         *获取banner
-         */
         HttpClientUtils.Builder.getCommonHttp()
                 .getHomeBanner()
                 .subscribeOn(Schedulers.io())
